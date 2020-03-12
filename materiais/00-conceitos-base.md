@@ -183,5 +183,80 @@ E este é o processo de multiplicação entre matrizes.
 ### Conteúdo com métodos contínuos
 
 * Quando uma função é contínua ? e diferenciável ?
+
+**Função contínua**
+
+Para começar, vamos a uma definição informar, que reflete bem a ideia de uma função contínua. A grosso modo, uma função é contínua se é possível desenhar seu gráfico sem tirar o lápis do papel, ou seja, esta função não tem interrupções. Vejamos alguns exemplos de funções contínuas e não contínuas.
+
+<div align="center">
+    <img src="imagens/funcoes_continuas_nao_continuas.png"></img>
+</div>
+
+Sendo que para cada função é possível fazer as seguintes considerações:
+- $f(x)$ é uma função contínua em todo seu domínio;
+- $r(x)$ é uma função contínua em todo seu domínio;
+- $g(x)$ não é contínua em $g(2)$;
+- $h(x)$ não é contínua em $h(2)$;
+- $q(x)$ não é contínua em $q(2)$;
+- $p(x)$ não é contínua em $p(2)$.
+
+Para as funções $g(x), h(x), q(x), p(x)$ também pode ser afirmado que, elas são contínuas em qualquer intervalo que não contenha $x = 2$.
+
+Vale dizer também que, para as funções $h(x)$ e $p(x)$ o valor $x = 2$ está definido em seu domínio, e mesmo assim, não é uma função contínua.
+
+Informações retiradas do [material de Cálculo diferencial e integral da Unesp](http://www.calculo.iq.unesp.br/PDF/Continuidade-complemento.pdf)
+
+**Função diferenciavel**
+
+Uma função é dita derivável (ou diferenciável) quando sua derivada existe em cada ponto do seu domínio. 
+
 * Como derivar e integrar polinômios ?
+
+**Derivadas**: 
+
+As derivadas representam a taxa de variação de uma dada função *f(x)*. Para mostrar a forma como uma derivada é feita, um exemplo é apresentado abaixo
+
+$$
+f(x) = \frac{x^2}{2}
+$$
+
+A derivada desta função é feita da seguinte forma
+
+$$
+f'(x) = \frac{2x}{2} = x
+$$
+
+Ou seja, o elemento que estava presente na potência é 'abaixado' e a potência é diminuida em 1. Para polinômios em que existam mais elementos envolvidos a regra é a mesma, com a diferença de que, cada um dos elementos terá sua derivada calculada separadamente.
+
+$$
+g(x) = \frac{3x^3}{2} + 9x + \sqrt{2}
+$$
+
+A derivada de tal função é
+
+$$
+g'(x) = \frac{9x^2}{2} + 9 + 0
+$$
+
+> $\sqrt{2}$ é um elemento constante, e a derivada (Leia, a taxa de variação) de uma função constante é zero.
+
+Há casos em que as funções estarão sendo utilizadas em conjuntos com outras funções, com algum tipo de relação binária, para esses casos a tabela abaixo pode ser bastante útil.
+
+| Tipo de derivação                            | Solução                                                                                                                                                               |
+|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Derivada da soma / subtração                 | $$\left(f\left(x\right)\pm g\left(x\right)\right)'\:=\:f'\left(x\right)\pm g'\left(x\right)$$                                                                         |
+| Derivada do produto: Regra do produto        | $$\left(f\left(x\right)\cdot  g\left(x\right)\right)'\:=\:f'\left(x\right)\cdot  g\left(x\right)+f\left(x\right)\cdot g'\left(x\right)$$                              |
+| Derivada da divisão: Regra do quociente      | $$\left(\frac{f\left(x\right)}{g\left(x\right)}\right)'\:=\:\frac{f'\left(x\right)\cdot  g\left(x\right)-f\left(x\right)\cdot  g'\left(x\right)}{g^2\left(x\right)}$$ |
+| Derivada de função composta: Regra da Cadeia | $$f\left(g\left(x\right)\right)'=f'\left(g\left(x\right)\right)\cdot g'\left(x\right)$$                                                                               |
+
+Durante o processo de derivação é normal buscar estruturas já conhecidas para facilitar todo o cálculo. Para boa parte das regras apresentadas abaixo, uma [tabela de derivadas](https://www.if.ufrgs.br/tex/fisica-4/tab-integrais.pdf), contendo formas padrão de derivadas podem ser utilizadas.
+
+**Integrais**: 
+
+Integração imediata
+
+Integração por substituição
+
+Integração por partes
+
 * O que é uma série de Taylor ?
