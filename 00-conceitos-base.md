@@ -78,9 +78,107 @@ Da mesma forma como visto nos valores inteiros, a matriz inversa pode ser entend
 
 * Como fazer multiplicação de matrizes ?
 
-> *Multiplicação de matrizes não é uma operação feita para ser memorizada, é para ser entendida* (3Blue1Brow)
+Para responder esta questão é interessante que façamos a divisão deste conceito em alguns contextos, já que, a multiplicação matricial pode representar diferentes comportamentos em contextos diferentes.
 
+**Multiplicação de uma matriz por uma escalar**
 
+Para entender a multiplicação de um matriz por uma escala, primeiro imagine um vetor *V* sendo projetado em um espaço bidimensional, este vetor é formado pelas coordenadas (2, 1)
+
+$$
+V = \begin{pmatrix}2&1\end{pmatrix}
+$$
+
+Sua representação no plano cartesiano é vista abaixo
+
+<div align="center">
+    <img src="imagens/vetor_1.png">
+</div>
+
+Certo, agora imagine que queremos escalar as coordenadas desse vetor, chegando em coordendas que são o dobro de onde o vetor está atualmente
+
+$$
+\begin{pmatrix}2&1\end{pmatrix}\rightarrow \begin{pmatrix}4&2\end{pmatrix}
+$$
+
+Para fazer isso basta realizarmos a multiplicação do vetor por 2, ao realizarmos essa operação estamos `escalando`, essa operação geometricamente pode ser representada com
+
+<div align="center">
+    <img src="imagens/vetor_2.png">
+</div>
+
+Se colocarmos no plano o vetor anterior e o vetor escalado teremos
+
+<div align="center">
+    <img src="imagens/vetor_3.png">
+</div>
+
+Desta forma podemos entender que, quando estamos fazendo a multiplicação de um vetor por uma escalar, estamos `escalando` os valores do vetor, ou seja, simplesmente pegando cada elemento do vetor e multiplicando pela escalar.
+
+> O nome escalar vem exatamente da operação que ela causa no vetor.
+
+**Multiplicação de matrizes com elementos n-dimensional**
+
+Antes de verificar o processo de operações com matrizes com elementos multidimensionais, façamos a definição de uma regra bastante importante
+
+Para entender essa regra, suponha uma multiplicação entre as matrizes *A* e *B*, para que essa operação seja válida, é preciso que a quantidade de colunas da matriz *A* seja a mesma quantidade de linhas da matriz *B*.
+
+<div align="center">
+    <img src="https://matematicabasica.net/wp-content/uploads/2019/02/definicao-da-multiplicacao-de-matrizes-1.png"></img>
+</div>
+
+Isso faz com que o produto gerado tenha as dimensões (Linhas de *A*, Colunas de *B*)
+
+<div align="center">
+    <img src="https://matematicabasica.net/wp-content/uploads/2019/02/definicao-da-multiplicacao-de-matrizes-c-1.png"></img>
+</div>
+
+Pronto! Agora podemos ir para os conceitos de multiplicação matricial.
+
+**Multiplicação de matriz por vetor**
+
+Dado a matriz *M* e o vetor *V*, a multiplicação desses é feita através da multiplicação de todos os elementos de cada linha em *M* por todos os elementos da coluna em *V*.
+
+$$
+\begin{pmatrix}a&b\\ c&d\end{pmatrix}\cdot \begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}ax+by\\ cx+dy\end{pmatrix}
+$$
+
+**Multiplicação de matriz por matriz**
+
+A ideia da multiplicação de uma matriz *M* por uma matriz *J* é bastante parecida com o apresentado na seção anterior.
+
+De forma geral, é necessário, para cada linha de *M*, multiplicar seus elementos por cada uma das colunas em *J*.
+
+Como esta é uma operação com mais passos, vamos a um pequeno exemplo
+
+$$
+A\:=\:\begin{pmatrix}1&3\\ 2&5\end{pmatrix};\:B=\begin{pmatrix}2&2\\ 0&1\end{pmatrix}
+$$
+
+Com as matrizes definidas o que fazemos é realizar a multiplicação de cada uma das linhas da matriz *A* por cada coluna em *B*.
+
+Então, para começar, a primeira linha é multiplicada com a primeira coluna, seu resultado é inserido na matriz resultante.
+
+<div align="center">
+    <img src="https://matematicabasica.net/wp-content/uploads/2019/02/a-vezes-b.png"></img>
+</div>
+
+Após isto, a mesma linha em *A*, utilizada na operação anterior é multiplicada com a segunda coluna.
+
+<div align="center">
+    <img src="https://matematicabasica.net/wp-content/uploads/2019/02/a-vezes-b-2.png"></img>
+</div>
+
+Depois, o mesmo passo é repetido para as demais linhas.
+
+<div align="center">
+    <img src="https://matematicabasica.net/wp-content/uploads/2019/02/a-vezes-b-3.png"></img>
+</div>
+
+<div align="center">
+    <img src="https://matematicabasica.net/wp-content/uploads/2019/02/a-vezes-b-4.png"></img>
+</div>
+
+E este é o processo de multiplicação entre matrizes.
 
 ### Conteúdo com métodos contínuos
 
