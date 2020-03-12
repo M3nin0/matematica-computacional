@@ -60,7 +60,8 @@ std::string Bases::ToAnyBase(std::string value, int srcBase, int destBase)
     std::string valuesInDestBase;
     int valueInDecimal = ToDecimal(value, srcBase);
 
-    // A quantidade pode ser > 1 pq quando é feito a divisão de um elemento que é menor que a base resta o próprio elemento
+    // A quantidade pode ser > 1 pq quando é feito a 
+    // divisão de um elemento que é menor que a base resta o próprio elemento
     while (valueInDecimal > 1)
     {
         std::string resString;
@@ -91,7 +92,9 @@ int Bases::ToDecimal(std::string value, int srcBase)
     for(char c: value)
     {
         int numericSymbol = 0;
-        if (!std::isdigit(c)) // Caso seja dígito utiliza o strtol, que permite inserir digito e devolve número (Com uma conversão de base)
+        if (!std::isdigit(c)) // Caso seja dígito utiliza o strtol, 
+                            // que permite inserir digito e 
+                            // devolve número (Com uma conversão de base)
             numericSymbol = std::strtol(&c, NULL, srcBase); // converte string para long
         else
             numericSymbol = std::stoi(&c); // Converte string para inteiro
@@ -111,10 +114,14 @@ Abaixo é feito a apresentação da forma de utilização do código criado
 
 int main()
 {    
-    std::cout << 1010 << " (bin to dec) " << Bases::ToAnyBase("100101", 2, 10) << std::endl;
-    std::cout << 252 << " (dec to bin) " << Bases::ToAnyBase("252", 10, 2) << std::endl;
-    std::cout << 2526 << " (dec to hex) " << Bases::ToAnyBase("2526", 10, 16) << std::endl;
-    std::cout << "22FA" << " (hex to oct) " << Bases::ToAnyBase("22FA", 16, 8) << std::endl;
+    std::cout << 1010 << " (bin to dec) " << 
+            Bases::ToAnyBase("100101", 2, 10) << std::endl;
+    std::cout << 252 << " (dec to bin) " << 
+            Bases::ToAnyBase("252", 10, 2) << std::endl;
+    std::cout << 2526 << " (dec to hex) " << 
+            Bases::ToAnyBase("2526", 10, 16) << std::endl;
+    std::cout << "22FA" << " (hex to oct) " << 
+            Bases::ToAnyBase("22FA", 16, 8) << std::endl;
 
     return 0;
 }
