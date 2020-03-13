@@ -210,6 +210,22 @@ Informações retiradas do [material de Cálculo diferencial e integral da Unesp
 
 Uma função é dita derivável (ou diferenciável) quando sua derivada existe em cada ponto do seu domínio. 
 
+> Toda função derivável é contínua, mas nem toda função contínua é derivável
+
+Para entender melhor tal afirmação, vamos a definição de um teorema
+
+Se $f:(a, b) \to \R$ é derivável em $x_0 \epsilon (a, b)$, então $f$ é contínua em $x_0$
+
+O ponto deste teorema é que, seu inverso não é verdadeiro (Uma função contínua em $x_0$ é derivável em $x_0$)
+
+Alguns exemplos de funções que são contínuas e não deriváveis são apresentados na figura abaixo
+
+<div align="center">
+    <img src="https://www.dicasdecalculo.com.br/wp-content/uploads/2016/10/indereiv%C3%A1vel-768x303.jpg"></img>
+</div>
+
+Para a função `Ponto de bico`, os limites laterais da definição das derivadas são distintos e nos pontos de tangência vertical as inclinações da reta secante pela direta e pela esquerda são $+\infin$ ou $-\infin$.
+
 * Como derivar e integrar polinômios ?
 
 **Derivadas**: 
@@ -253,10 +269,164 @@ Durante o processo de derivação é normal buscar estruturas já conhecidas par
 
 **Integrais**: 
 
-Integração imediata
+*Integrais nos ajudam a encontrar a área formada pela curva, melhor que isso, a integral é um método de multiplicação mais sofisticado*
 
-Integração por substituição
+O processo para a realização do cálculo da integral (anti-derivada) pode ser feito através da utilização dos conceitos abaixo.
 
-Integração por partes
+Primeiro começamos com as integrais primitivas
+
+| Integrais mais comuns                                                      | Observação                                                                  |
+|----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| $$\int \:kdx\:=\:kx\:+\:C$$                                                | A constante C de integração é inserida por essa ser uma integral indefinida |
+| $$\int \:k^ndx\:=\:\frac{x^{n\:+\:1}}{n\:+\:1}+C\:\left(n\:\ne -1\right)$$ | Para casos em que n = 1, usa-se $\frac{n}{x}$                               |
+| $$\int \:\frac{1}{x}dx\:=ln\left(x\right)\:+\:C$$                          |                                                                             |
+| $$\int \:e^xdx\:=e^x+C$$                                                   |                                                                             |
+| $$\int \:a^xdx=\frac{a^x}{ln\left(a\right)}+C$$                            |                                                                             |
+
+> As primitivas geométricas foram omitidas da tabela acima
+
+Para algumas classes de funções, a integração seguindo as primitivas apresentadas pode não ser o suficiente, então, técnicas podem ser usadas para tentar contar tal problema e resolver a integração.
+
+Os dois métodos, integração por `substituição` e `por partes` são algumas dessas técnicas, cada uma delas apresentadas abaixo
+
+**Integração por substituição**
+
+Na integração por substituição busca-se fazer mudanças na função original, essas mudanças são descritas através dos passos abaixo
+
+- 1° - Identifica qual parte da função pode ser selecionado para ser derivado\*
+- 2° - Com o elemento identificado, faça sua derivada e substitua os elementos da equação pelas variaǘeis $u$ e $du$, sendo $u$ o elemento selecionado no passo anterior e $du$ a derivada de $u$;
+- 3° - Integre a função com as novas variáveis.
+
+\* Essa escolha é feita procurando uma forma de, através da derivada da parte selecionada, chegar a uma outra parte também presente na função.
+
+Para fixar o conceito, vamos a um exemplo. Considere a seguinte equação
+
+$$
+\frac{(-6x -5)}{(-3x^2 -5x - 2)} dx
+$$
+
+Nesta equação, vamos aplicar o primeiro passo, o de identificação de um elemento que quando derivado chega a outro elemento presente na equação. Para este caso, o elemento escolhido será $-3x^2 -5x - 2$
+
+Desta forma, o elemento escolhido e sua derivada são
+
+$$
+u = -3x^2 -5x - 2
+\\
+du = -6x - 5
+$$
+
+Veja que $du$ já é equivalente a outro a um elemento que já estava na equação, dessa forma é possível montar a integral considerando tais variáveis
+
+$$
+\int \: \frac{du}{u}
+$$
+
+Esta integral tem uma característica bastante conhecida, e pode ser integrada diretamente, gerando o seguinte resultado
+
+$$
+\int \: \frac{du}{u} = \log(u) = \log(-3x^2 -5x - 2)
+$$
+
+Este método é bastante usual e interessante, porém não é todas as vezes que ele funciona (Assim como quase tudo no processo de integração), para casos em que esta técnica não resolve, existe a integração por partes
+
+**Integração por partes**
+
+Esta técnica para integração é bastante interessante e poderosa, através de um método recursivo ela vai dividindo a função e realizando integrações o quanto for necessário, sua formulação é dada por
+
+$$
+\int \:u\:dv\:=\:u\:\cdot \:v\:-\:\int \:v\:du
+$$
+
+Nesta técnica o objetivo central é encontrar o elemento $u$ da função. Ao encontrar tal elemento é possível através de derivação e e integração definir também os elementos $v, dv, du$ utilizados na formulação apresentada anteriormente.
+
+O critério de seleção do $u$ pode ser descrito com o acrônimo LIATE, sendo que cada letra possui um significado e sua ordem indica a ordem de importância para a definição de um elemento como $u$.
+
+$$
+L = Logaritmo
+\\
+I = Inverta\ trigonométrica
+\\
+A = Algébrico/\ Potência
+\\
+T = Trigonométrica
+\\
+E = Exponencial
+$$
+
+Vamos ao passo a passo deste método e depois para um exemplo
+
+- 1° - Definir o valor $u$ (Utilizando LIATE);
+- 2° - Ao definir $u$ você também faz a definição de $dv$, que básicamente é tudo aquilo que não foi selecionado como $u$;
+- 3° - Derive $u$ para encontrar $du$;
+- 4° - Integre $dv$ para encontrar $v$;
+- 5° - Substituia os elementos encontrados na formulação da técnica e pronto, a função estará integrada
+
+> Pode ser que, após a substituição dos elementos na formula e aplicação da integração, você tenha que fazer outras integrais por parte ou mesmo substituição dentro do método.
+
+Para finalizar, vamos a um exemplo. Considere a seguinte integral
+
+$$
+\int \: x * e^{3x}dx
+$$
+
+Veja que nessa integral não é possível realizar a aplicação de uma integral primitiva, ou mesmo a integração por substituição, nesse caso, precisamos fazer a integração por partes.
+
+Seguindo o padrão, vamos ir por cada um dos passos que definimos anteriormente. Primeiro, identificar $u$.
+
+Se notarmos bem, o elemento que pode ser tratado como $u$ é o $x$, uma vez que ele está na categoria A do LIATE, que vem antes do exponencial (Que talvez seja o elemento mais evidente da função).
+
+Como definimos $u$, o valor $dv$ também é definido
+
+$$
+u = x
+\\
+dv = e^{3x}
+$$
+
+Agora, vamos encontrar os elementos $du$ e $v$
+
+$$
+du = \frac{d}{dx}\left(u\right) = 1
+\\
+v = \int \: dv = \frac{1}{3}e^{3x}+C
+$$
+
+Com esses elementos definidos, façamos a substituição na formulação da técnica
+
+$$
+\int \:u\cdot dv\:=\:x\:\cdot \:\frac{1}{x}e^{3x}-\int \frac{1}{x}e^{3x}du\:
+$$
+
+Resolvendo tal equação, chegamos ao resultado desejado
+
+$$
+x\frac{e^{\:3x}}{3}-\frac{e^{3x}}{9}
+$$
+
+Pronto! 
 
 * O que é uma série de Taylor ?
+
+Existem funções que podem ser trabalhosas de serem utilizadas, então técnicas são criadas para que aproximações dessas funções sejam feitas e elas não precisam ser usadas.
+
+Uma dessas técnicas são as Séries de Taylor, que através de derivadas, busca criar um polinômio que se aproxime de uma função qualquer.
+
+Para a realização dessa série faz-se básicamente um polinômio constituído com todas as derivadas (Em todas as ordens) da função que está sendo aproximada.
+
+Fazendo uma definição um pouco mais formal, temos que
+
+Seja $f$ uma função com derivadas de todas as ordens em algum intervalo $a$ como um ponto interior. Sua formulação é feita como apresentado abaixo
+
+$$
+f\left(x\right)=\sum _{n=0}^{\infty }\:\frac{f^{\:\left(n\right)}\left(a\right)}{n!}\left(x\:-\:a\right)^n
+$$
+
+Sabendo que, $a$ é o ponto utilizado para todas as derivações, $n$ é o grau da derivada e $x$ o valor que está busca ser gerado através deste polinômio.
+
+**Algumas definições legais sobre Séries de Taylor**
+
+*Série de Taylor busca representar uma função com uma série de potências*
+
+*Aproximação de função por meio de um polinômio*
+
+*Série de Maclaurin* é um caso particular de uma série de Taylor, onde o ponto considerado na série ($a$) é zero ($a = 0$)
