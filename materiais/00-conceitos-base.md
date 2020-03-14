@@ -45,9 +45,6 @@ Uma base para um dado espaço vetorial *V* é um conjunto *B* que:
 
 Nessa parte é interessante especificamente a interpretação geométrica de cada um dos métodos, essas são citadas abaixo:
 
-**Interpretação geométrica do produto escalar**: 
-**Interpretação geométrica do produto vetorial**: 
-
 * O que é a normal de um vetor ?
 
 A normal ou **módulo** de um vetor é o comprimento desse vetor, que pode ser calculado do meio da distância de seu ponto final até a origem.
@@ -70,9 +67,11 @@ Já para determinantes de ordem N (Considerando N >= 3), é possível utilizar o
 Desta forma, uma matriz transposta é aquele que passou pela operação de transposição e deve suas linhas trocadas por colunas (Ou colunas trocas por linhas)
 
 **Matriz inversa**: Para a explicação de tal conceito, vamos voltar a um elemento bem básico, números reais. Imagine dois números reais **i** e **j**, **i** será o inverso de **j** se e somente se, **i** * **j** = 1
-Da mesma forma como visto nos valores inteiros, a matriz inversa pode ser entendida como a matriz com valores inversos a sua matriz original (Alterando os valores e mantendo as propriedades de linhas e colunas)
+Da mesma forma como visto nos valores inteiros, a matriz inversa pode ser entendida como a matriz com valores inversos a sua matriz original (Alterando os valores e mantendo as propriedades de linhas e colunas). Desta forma é possível definir que uma matriz inversa representa uma matriz que é a inversa multiplicativa da matriz original. 
 
-**Lembre-se**: Só existe uma matriz inversa, e ainda, existem matrizes que podem vir a não ter uma matriz inverta!
+A forma de encontrar uma matriz inversa pode ser dada pela solução de um sistema linear.
+
+**Lembre-se**: Para os números, sempre existira um inverso multiplicativo (Exceto para o zero), não importa o quão grande ou pequeno ele seja, ao multiplicá-lo pelo seu recíproco sempre teremos 1. Para o caso das matrizes, só existe uma matriz inversa, e ainda, existem matrizes que podem vir a não ter uma matriz inversa.
 
 > Quando comecei a aprender sobre matrizes me perguntei: Por qual motivo eu quero uma matriz inversa ? A resposta é bastante simples, não existe a operação de divisão em uma matriz! Então obtendo sua inversa é possível eu realizar divisões de matrizes através de multiplicações :smile:
 
