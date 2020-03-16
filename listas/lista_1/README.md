@@ -9,13 +9,13 @@ Para resolver este exercício, foram aplicados os seguintes conceitos. Primeiro,
 Para entender melhor, vamos para um exemplo
 
 $$
-B10(1427) = (1 * 10^3) + (4 * 10^2) + (2 * 10^1) + (7 * 10^0)
+B_{10}(1427) = (1 * 10^3) + (4 * 10^2) + (2 * 10^1) + (7 * 10^0)
 $$
 
 Perceba que, o número `1427` foi obtido através da decomposição de seus elementos. Veja que na regra gerada, o elemento que está sendo elevado é 10, isto porque o número está na base 10, vejamos um exemplo com um valor na base 2
 
 $$
-B2(100101) = (1 * 2^5) + (0 * 2^4) + (0 * 2^3) + (1 * 2^2) + (0 * 2^1) + (1 * 2^0) = B10(37)
+B_2(100101) = (1 * 2^5) + (0 * 2^4) + (0 * 2^3) + (1 * 2^2) + (0 * 2^1) + (1 * 2^0) = B_{10}(37)
 $$
 
 Com este sistema simples de decomposição é possível converter qualquer número, em qualquer base, para a base decimal (Como o exemplo apresentado acima)
