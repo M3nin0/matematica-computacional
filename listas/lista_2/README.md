@@ -1,6 +1,13 @@
 ## Lista 2 - Sistemas lineares
 
-Solução numérica de sistemas lineares
+Segunda lista de exercícios da matéria de matemática computacional (CAP-239-4), do curso de pós-graduação em Computação Aplicada do Instituto Nacional de Pesquisas Espaciais
+
+Docentes:
+- Dr. Leonardo B. L. Santos
+- Dr. Reinaldo Rosa
+
+Discente:
+- Felipe Menino Carlos
 
 ### Exercícios
 
@@ -8,9 +15,19 @@ Abaixo são apresentados os exercícios da lista 2 e suas soluções
 
 **1 - Realize a solução do sistema linear através do Método da Eliminação de Gauss (MEG)**
 
-Vou fazer no papel, depois insiro aqui e fica bacana.
+Para a fixação dos passos necessários para a realização do MEG, o mesmo foi feito passo a passo "na mão". O resultado é apresentado abaixo.
 
-**2 - Pense em uma interpretação geométrica para a solução de sistemas lineares. E considerando um sistema de ordem 2, ilustre.**
+<div align="center">
+    <img src="figuras/passo_a_passo_meg.jpg">
+</div>
+
+Com o resultado apresentado na folha acima, é possível afirmar que a solução do sistema linear apresentado é
+
+$$
+\begin{pmatrix}2&1&-3&-1\\ -1&3&2&12\\ 3&1&-3&0\end{pmatrix}\cdot \begin{pmatrix}x\\ y\\ z\end{pmatrix}=\begin{pmatrix}1\\ 3\\ 2\end{pmatrix}
+$$
+
+**2 - Pense em uma interpretação geométrica para a solução de sistemas lineares. E considerando um sistema de ordem 2, ilustre**
 
 Inicialmente, considere apenas uma equação. Tal equação possui diversas combinações de solução, de modo a gerar um plano com todas as suas possíveis soluções. Para equações lineares, realizando a visualização geométrica é possível ver tal conceito através de retas geradas pelas possíveis soluções de uma equação.
 
@@ -39,7 +56,6 @@ Tratando de um sistema de equações, a ideia de sua solução está muito vínc
 Sim, para este caso, uma das necessidades do método utilizado (Método de diferenças finitas) é que o espaço trabalhado seja o discreto, desta forma, a discretização é necessária para a aproximação da EDO via sistema linear.
 
 > A resposta apresentada anteriormente foi feita com base na leitura realizada do [reamat](https://www.ufrgs.br/reamat/CalculoNumerico/livro-sci/pdvdc-metodo_de_diferencas_finitas.html) (Cálculo Numérico)
-
 
 **4- Se melhora de um lado, outro lado tende a piorar. Como medir a melhora e a piora ?**
 

@@ -1,6 +1,13 @@
 ## Lista 1 - Conversão de base numérica
 
-Conversão entre quaisquer duas bases numéricas
+Primeira lista de exercícios da matéria de matemática computacional (CAP-239-4), do curso de pós-graduação em Computação Aplicada do Instituto Nacional de Pesquisas Espaciais
+
+Docentes:
+- Dr. Leonardo B. L. Santos
+- Dr. Reinaldo Rosa
+
+Discente:
+- Felipe Menino Carlos
 
 ### Desenvolvimento da ideia
 
