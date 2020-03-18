@@ -24,7 +24,7 @@ Para a fixação dos passos necessários para a realização do MEG, o mesmo foi
 Com o resultado apresentado na folha acima, é possível afirmar que a solução do sistema linear apresentado é
 
 $$
-\begin{pmatrix}2&1&-3&-1\\ -1&3&2&12\\ 3&1&-3&0\end{pmatrix}\cdot \begin{pmatrix}x\\ y\\ z\end{pmatrix}=\begin{pmatrix}1\\ 3\\ 2\end{pmatrix}
+\begin{pmatrix}x\\ y\\ z\end{pmatrix}=\begin{pmatrix}1\\ 3\\ 2\end{pmatrix}
 $$
 
 **2 - Pense em uma interpretação geométrica para a solução de sistemas lineares. E considerando um sistema de ordem 2, ilustre**
