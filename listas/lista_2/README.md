@@ -33,7 +33,7 @@ Inicialmente, considere apenas uma equação. Tal equação possui diversas comb
 
 Tratando de um sistema de equações, a ideia de sua solução está muito vínculada ao plano de soluções possíveis de cada uma das equações que compõem o sistema linear, de modo que:
 
-- Sistemas da classe **Possível e Determinado**, possuem o cruzamento dos planos de solução das equações em um ponto, como apresentado na Figura de exemplo abaixo.
+- Sistemas da classe **Possível e Determinado**, possuem o cruzamento dos planos de solução das equações em um ponto, sendo este a solução do sistema, como apresentado abaixo.
 
 <div align="center">
     <img src="figuras/sistema_possivel_e_determinado.png">
@@ -61,13 +61,13 @@ Sim, para este caso, uma das necessidades do método utilizado (Método de difer
 
 A resposta desta pergunta pode vir de diversas maneiras, cada uma considerando um ponto de vista diferente, como forma de simplificar, aqui será feita a consideração da qualidade dos resultados e custo computacional (Tempo e espaço).
 
-É importante destacar também que, o contexto pensado para a descrição dos itens citados anteriormente é o de aplicação de métodos numéricos, sem expecificar explicitamente o método. Isso é feito para que o contexto geral da disciplina possa ser utilizado na descrição.
+É importante destacar também que, o contexto pensado para a descrição dos itens citados anteriormente é o de aplicação de métodos numéricos, sem especificar explicitamente o método. Isso é feito para que o contexto geral da disciplina possa ser utilizado na descrição.
 
 **Custo computacional**: Antes de falar sobre a qualidade dos resultados, o custo computacional deve ser mencionado, já que este é um dos pontos que precisam ser considerados na medição de qualidade.
 
-Quando estamos tratando de algoritmos, estes apresentam certos custos para serem executados, sendo esses o custo de tempo, que mede a quantidade de tempo consumida por um algorimo para resolver determinado problema e o custo de espaço, que víncula a quantidade de recursos de espaço consumida pelo algoritmo.
+Quando estamos tratando de algoritmos, estes apresentam certos custos para serem executados, sendo esses o custo de tempo, vinculado a quantidade de tempo consumida pelo algorimo para resolver determinado problema e o custo de espaço, sendo relacionado a quantidade de recursos de espaço consumida pelo algoritmo.
 
-A depender do tipo da estratégia adotada pelo algoritmo e o problema que o mesmo está resolvendo, cada um desses custos pode ser extremamente alto, fazendo com que muito recurso de espaço e/ou tempo sejam demandados. 
+A depender do tipo da estratégia adotada pelo algoritmo e o problema que o mesmo está resolvendo, cada um desses custos pode ser extremamente alto, por isso, uma boa avaliação de tais custos devem ser considerados durante o processo de aplicação de um determinado método.
 
 **Qualidade dos resultados**: Com o cuso computacional definido, é possível entender um pouco melhor sobre a qualidade dos resultados.
 

@@ -302,9 +302,9 @@ pre[data-line] .line-highlight[data-end]:after {
     std<span class="token operator">::</span>string valuesInDestBase<span class="token punctuation">;</span>
     <span class="token keyword">int</span> valueInDecimal <span class="token operator">=</span> <span class="token function">ToDecimal</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> srcBase<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token comment">// A quantidade pode ser &gt; 1 pq quando &#xE9; feito a </span>
+    <span class="token comment">// A quantidade pode ser &gt;= 1 j&#xE1; que quando &#xE9; feito a </span>
     <span class="token comment">// divis&#xE3;o de um elemento que &#xE9; menor que a base resta o pr&#xF3;prio elemento</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>valueInDecimal <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>valueInDecimal <span class="token operator">&gt;=</span> <span class="token number">1</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         std<span class="token operator">::</span>string resString<span class="token punctuation">;</span>
         <span class="token keyword">int</span> res <span class="token operator">=</span> valueInDecimal <span class="token operator">%</span> destBase<span class="token punctuation">;</span>
@@ -347,7 +347,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>    
     std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token number">1010</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot; (bin to dec) &quot;</span> <span class="token operator">&lt;&lt;</span> 
-            Bases<span class="token operator">::</span><span class="token function">ToAnyBase</span><span class="token punctuation">(</span><span class="token string">&quot;100101&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+            Bases<span class="token operator">::</span><span class="token function">ToAnyBase</span><span class="token punctuation">(</span><span class="token string">&quot;1010&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
     std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token number">252</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot; (dec to bin) &quot;</span> <span class="token operator">&lt;&lt;</span> 
             Bases<span class="token operator">::</span><span class="token function">ToAnyBase</span><span class="token punctuation">(</span><span class="token string">&quot;252&quot;</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
     std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token number">2526</span> <span class="token operator">&lt;&lt;</span> <span class="token string">&quot; (dec to hex) &quot;</span> <span class="token operator">&lt;&lt;</span> 
@@ -357,10 +357,12 @@ pre[data-line] .line-highlight[data-end]:after {
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</pre><blockquote>
-<p>Todo o c&#xF3;digo fonte est&#xE1; dispon&#xED;vel no diret&#xF3;rio <a href="src">src</a></p>
-</blockquote>
-<h3 class="mume-header" id="observa%C3%A7%C3%B5es">Observa&#xE7;&#xF5;es</h3>
+</pre><p>Com a execu&#xE7;&#xE3;o do programa acima, as seguinte sa&#xED;das s&#xE3;o produzidas.</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">1010 <span class="token punctuation">(</span>bin to dec<span class="token punctuation">)</span> 10
+252 <span class="token punctuation">(</span>dec to bin<span class="token punctuation">)</span> 11111100
+2526 <span class="token punctuation">(</span>dec to hex<span class="token punctuation">)</span> 9DE
+22FA <span class="token punctuation">(</span>hex to oct<span class="token punctuation">)</span> 21372
+</pre><h3 class="mume-header" id="observa%C3%A7%C3%B5es">Observa&#xE7;&#xF5;es</h3>
 
 <p>Abaixo s&#xE3;o listadas algumas observa&#xE7;&#xF5;es feitas durante o desenvolvimento da lista de exerc&#xED;cios</p>
 <ul>

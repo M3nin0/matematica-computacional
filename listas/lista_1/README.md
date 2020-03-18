@@ -67,9 +67,9 @@ std::string Bases::ToAnyBase(std::string value, int srcBase, int destBase)
     std::string valuesInDestBase;
     int valueInDecimal = ToDecimal(value, srcBase);
 
-    // A quantidade pode ser > 1 pq quando é feito a 
+    // A quantidade pode ser >= 1 já que quando é feito a 
     // divisão de um elemento que é menor que a base resta o próprio elemento
-    while (valueInDecimal > 1)
+    while (valueInDecimal >= 1)
     {
         std::string resString;
         int res = valueInDecimal % destBase;
@@ -122,7 +122,7 @@ Abaixo é feito a apresentação da forma de utilização do código criado
 int main()
 {    
     std::cout << 1010 << " (bin to dec) " << 
-            Bases::ToAnyBase("100101", 2, 10) << std::endl;
+            Bases::ToAnyBase("1010", 2, 10) << std::endl;
     std::cout << 252 << " (dec to bin) " << 
             Bases::ToAnyBase("252", 10, 2) << std::endl;
     std::cout << 2526 << " (dec to hex) " << 
@@ -134,7 +134,14 @@ int main()
 }
 ```
 
-> Todo o código fonte está disponível no diretório [src](src)
+Com a execução do programa acima, as seguinte saídas são produzidas.
+
+```shell
+1010 (bin to dec) 10
+252 (dec to bin) 11111100
+2526 (dec to hex) 9DE
+22FA (hex to oct) 21372
+```
 
 ### Observações
 

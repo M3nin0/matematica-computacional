@@ -10,7 +10,7 @@ std::string Bases::ToAnyBase(std::string value, int srcBase, int destBase)
     std::string valuesInDestBase;
     int valueInDecimal = ToDecimal(value, srcBase);
 
-    while (valueInDecimal > 1)
+    while (valueInDecimal >= 1)
     {
         std::string resString;
         int res = valueInDecimal % destBase;
