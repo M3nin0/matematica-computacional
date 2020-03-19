@@ -17,6 +17,104 @@ Discente:
 |--------|----------|-----------|-----------|
 | $f(x)$ | $f(x_0)$ | $f(x_1 )$ | $f(x_2 )$ |
 
+**Avaliação do resultado**: Como forma de avaliar o resultado, nesta etapa é feita a utilização do Método de Eliminação Gaussiana (Implementado na lista 2) e também o método de interpolação de Lagrange, sendo a [implementação](#) feita em C++
+
+
 **2) Para uma tabela com 4 pontos, vá, progressivamente (de 1 a 3), aumentando o grau do polinômio interpolador - compare graficamente as soluções e discuta uma "amostragem preferencial"**
+
+Para a realização deste exercício, foi escolhido um conjunto de pontos que tem seu formato parecido com uma pequena curva. A escolha foi feita por conta do interesse em ver como a interpolação funciona para funções com este formato.
+
+| $x$    | 1 | 3 | 5 | 7 |
+|------|---|---|---|---|
+| $f(x)$ | 2 | 4 | 3 | 4 |
+
+A visualização dos dados é apresentada abaixo.
+
+<div align="center">
+    <img src="figuras/pontos_tabelados.png">
+</div>
+
+Com esses elementos definidos a interpolação de Lagrange foi aplicada, como apresentado nos passos abaixo.
+
+<!-- Inserir aqui a figura do caderno com cada um dos passos -->
+> O passo a passo feito "na mão" será adicionado aqui
+
+Com a conclusão da aplicação do método de lagrange, os seguintes polinômios de Lagrange foram gerados
+
+$$
+l_0(x) = -\frac{x^3}{48}+\frac{5x^2}{16}-\frac{71x}{48}+\frac{35}{16}
+$$
+
+$$
+l_1(x) = \frac{x^3}{16}-\frac{13x^2}{16}+\frac{47x}{16}-\frac{35}{16}
+$$
+
+$$
+l_2(x) = -\frac{x^3}{16}+\frac{11x^2}{16}-\frac{31x}{16}+\frac{21}{16}
+$$
+
+$$
+l_3(x) = \frac{x^3}{48}-\frac{3x^2}{16}+\frac{23x}{48}-\frac{5}{16}
+$$
+
+Para a geração do polinômio interpolador, foi feito
+
+$$
+f_0 * l_0(x) + f_1 * l_1(x) + f_2 * l_2(x) + f_3 * l_3(x)
+$$
+
+Gerando assim, o seguinte polinômio interpolador
+
+$$
+P_3(x) = \frac{5x^3}{48}-\frac{21x^2}{16}+\frac{235x}{48}-\frac{27}{16}
+$$
+
+**Teste com os graus de polinômios**: O objetivo deste teste foi verificar o comportamento dos polinômios gerados, desta forma, o polinômio $P_3$ foi decomposto em 3 polinômios, sendo esses gerados de $P_1$ até $P_3$.
+
+$$
+P_1(x) = \frac{235x}{48}-\frac{27}{16}
+$$
+
+$$
+P_2(x) = -\frac{21x^2}{16}+\frac{235x}{48}-\frac{27}{16}
+$$
+
+$$
+P_3(x) = \frac{5x^3}{48}-\frac{21x^2}{16}+\frac{235x}{48}-\frac{27}{16}
+$$
+
+Após a decomposição, cada um dos polinômios gerados pode ser visualizado separadamente, fazendo com que o comportamento e influência de cada um desses no $P_3$ fosse melhor compreendida.
+
+<div align="center">
+    <img src="figuras/comportamento_polinomios.png">
+</div>
+
+Perceba que, para o caso do comportamento da função que estava sendo analizada, o aumento do grau do polinômio foi extretamente necessário para que houvesse a convergência entre o formato original e o interpolado.
+
+É interessante apontar também que, para o caso de outras funções sendo interpoladas, a depender de seu comportamento, o polinômio de maior grau nem seja o necessário, outros de menor grau já são o suficiente para a interpolação em boa parte dos pontos.
+
+**Teste com a variação da quantidade de pontos**: Após realizar a decomposição do polinômio interpolador, surgiu a curiosidade em entender como cada um dos pontos influência no processo de interpolação dos dados. Então, o processo de interpolação de Lagrange foi aplicado várias sobre o conjunto potência ($2^A$) da tabela de pontos, considerando que, para cada caso, um conjunto de pontos foi utilizando.
+
+Ou seja, para a geração do primeiro polinômio interpolador $P_0$, apenas um conjunto de pontos foi utilizado, para o $P_1$ dois pontos foram utilizados, seguindo essa lógica até todos os pontos terem sido utilizados. O resultado é apresentado abaixo
+
+<div align="center">
+    <img src="figuras/polinomios_de_interpolacao.png">
+</div>
+
+Através desse resultado é possível perceber como o ajuste vai sendo feito com o aumento de pontos dentro do processo de interpolação.
+
+**Teste com vários valores gerados pela função interpoladora**: Com a finalização do teste anterior, como forma de testar o polinômio interpolador resultante de todo o processo, pontos dentro do intervalo interpolado, mas que não estavam na tabela começaram a ser testados.
+
+Os resultados foram condizentes, todos seguindo a lógica da curva que é modelada pelos pontos da tabela. Porém em todos os testes a função ficava muito "quadrada", uma curva sem nenhum tivo de suavização, soando apenas como a ligação de vários pontos por uma reta.
+
+Então, assumindo esse comportamento da função interpoladora, de ligar vários pontos, seguindo o comportamento interpolado, foi gerado alguns testes com uma boa variedade de pontos no polinômio de interpolação.
+
+<div align="center">
+    <img src="figuras/interpolacao_varios_pontos.png">
+</div>
+
+Com este resultado fica claro entender a maneira como o polinômio de interpolação busca convergir seu resultado para o comportamento utilizado como base para a interpolação.
+
+<!-- **Pergunta**: Um polinômio de 3° grau normalmente gera algo parecido com uma curva, e se eu tiver um conjunto com mais de três pontos e interpolar, o que ocorre na função de interpolação. -->
 
 <!-- Neste exercício, ao falar sobre a integração, falar sobre a experiência feita com mais pontos na interpolação e dizer que buscou e encontrou sugestões de o pq o problema ocorrer (https://www.quora.com/What-are-the-advantages-and-disadvantages-to-use-higher-order-polynomials-in-Lagranges-interpolation) -->
