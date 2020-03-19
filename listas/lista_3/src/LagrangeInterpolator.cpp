@@ -6,7 +6,7 @@
 
 #include "LagrangeInterpolator.hpp"
 
-interp::LagrangeInterpolator::LagrangeInterpolator(const xt::xarray<double> arrX, const xt::xarray<double> arrY)
+interp::LagrangeInterpolator::LagrangeInterpolator(const xt::xarray<double>& arrX, const xt::xarray<double>& arrY)
 {
     this->arrX = arrX;
     this->arrY = arrY;
@@ -35,7 +35,7 @@ void interp::LagrangeInterpolator::fit()
     }
 }
 
-xt::xarray<double> interp::LagrangeInterpolator::interp(const xt::xarray<double> arr)
+const xt::xarray<double> interp::LagrangeInterpolator::interp(const xt::xarray<double>& arr) const
 {
     std::vector<double> prodResults;
     const std::vector<std::size_t> shape = {1, arr.size()};
