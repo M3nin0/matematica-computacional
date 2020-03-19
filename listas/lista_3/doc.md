@@ -17,8 +17,23 @@ Discente:
 |--------|----------|-----------|-----------|
 | $f(x)$ | $f(x_0)$ | $f(x_1 )$ | $f(x_2 )$ |
 
-**Avaliação do resultado**: Como forma de avaliar o resultado, nesta etapa é feita a utilização do Método de Eliminação Gaussiana (Implementado na lista 2) e também o método de interpolação de Lagrange, sendo a [implementação](#) feita em C++
+<div align="center">
+    <img src="figuras/interp_1.jpg">
+</div>
 
+<div align="center">
+    <img src="figuras/interp_2.jpg">
+</div>
+
+<div align="center">
+    <img src="figuras/interp_3.jpg">
+</div>
+
+<div align="center">
+    <img src="figuras/interp_4.jpg">
+</div>
+
+**Avaliação do resultado**: Como forma de avaliar o resultado, foi feita a utilização do Método de Eliminação Gaussiana (Implementado na [lista 2](https://fmenino-cap-239.netlify.com/lista_2/)) e também do método de interpolação de Lagrange ([Implementado](https://github.com/M3nin0/matematica-computacional/tree/master/listas/lista_3) em C++)
 
 **2) Para uma tabela com 4 pontos, vá, progressivamente (de 1 a 3), aumentando o grau do polinômio interpolador - compare graficamente as soluções e discuta uma "amostragem preferencial"**
 
@@ -36,10 +51,19 @@ A visualização dos dados é apresentada abaixo.
 
 Com esses elementos definidos a interpolação de Lagrange foi aplicada, como apresentado nos passos abaixo.
 
-<!-- Inserir aqui a figura do caderno com cada um dos passos -->
-> O passo a passo feito "na mão" será adicionado aqui
+<div align="center">
+    <img src="figuras/interp_5.jpg">
+</div>
 
-Com a conclusão da aplicação do método de lagrange, os seguintes polinômios de Lagrange foram gerados
+<div align="center">
+    <img src="figuras/interp_6.jpg">
+</div>
+
+<div align="center">
+    <img src="figuras/interp_7.jpg">
+</div>
+
+Com a conclusão da aplicação do método, os seguintes polinômios de Lagrange foram gerados
 
 $$
 l_0(x) = -\frac{x^3}{48}+\frac{5x^2}{16}-\frac{71x}{48}+\frac{35}{16}
