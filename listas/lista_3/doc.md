@@ -119,13 +119,13 @@ Perceba que, para o caso do comportamento da função que estava sendo analizada
 
 **Teste com a variação da quantidade de pontos**: Após realizar a decomposição do polinômio interpolador, surgiu a curiosidade em entender como cada um dos pontos influência no processo de interpolação dos dados. Então, o processo de interpolação de Lagrange foi aplicado várias sobre o conjunto potência ($2^A$) da tabela de pontos, considerando que, para cada caso, um conjunto de pontos foi utilizando.
 
-Ou seja, para a geração do primeiro polinômio interpolador $P_0$, apenas um conjunto de pontos foi utilizado, para o $P_1$ dois pontos foram utilizados, seguindo essa lógica até todos os pontos terem sido utilizados. O resultado é apresentado abaixo
+Ou seja, para a geração do primeiro polinômio interpolador $P_0$, apenas um ponto foi utilizado, para o $P_1$ dois pontos foram utilizados, seguindo essa lógica até todos os pontos terem sido utilizados. O resultado é apresentado abaixo
 
 <div align="center">
     <img src="figuras/polinomios_de_interpolacao.png">
 </div>
 
-Através desse resultado é possível perceber como o ajuste vai sendo feito com o aumento de pontos dentro do processo de interpolação.
+Através desse resultado é possível perceber como o ajuste vai sendo feito para o formato dos pontos que estão sendo considerados na interpolação.
 
 **Teste com vários valores gerados pela função interpoladora**: Com a finalização do teste anterior, como forma de testar o polinômio interpolador resultante de todo o processo, pontos dentro do intervalo interpolado, mas que não estavam na tabela começaram a ser testados.
 
