@@ -15,3 +15,7 @@ Discente:
 - [Lista 2](https://fmenino-cap-239.netlify.com/lista_2/)
 - [Lista 3](https://fmenino-cap-239.netlify.com/lista_3/)
 - [Lista extra](https://fmenino-cap-239.netlify.com/extras/)
+
+**Conceitos base**
+
+- [Documento com os conceitos base para a matéria](https://github.com/M3nin0/matematica-computacional/blob/master/materiais/00-conceitos-base.pdf)
