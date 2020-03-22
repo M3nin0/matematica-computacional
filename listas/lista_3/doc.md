@@ -137,6 +137,8 @@ Então, assumindo esse comportamento da função interpoladora, de ligar vários
 
 Com este resultado fica claro entender a maneira como o polinômio de interpolação busca convergir seu resultado para o comportamento utilizado como base para a interpolação.
 
+> Fiquei curioso em saber mais sobre o método de Lagrange e encontrei esse [discussão no Quora](https://www.quora.com/What-are-the-advantages-and-disadvantages-to-use-higher-order-polynomials-in-Lagranges-interpolation) bastante interessante, sobre os limites do método.
+
 <!-- **Pergunta**: Um polinômio de 3° grau normalmente gera algo parecido com uma curva, e se eu tiver um conjunto com mais de três pontos e interpolar, o que ocorre na função de interpolação. -->
 
 <!-- Neste exercício, ao falar sobre a integração, falar sobre a experiência feita com mais pontos na interpolação e dizer que buscou e encontrou sugestões de o pq o problema ocorrer (https://www.quora.com/What-are-the-advantages-and-disadvantages-to-use-higher-order-polynomials-in-Lagranges-interpolation) -->
