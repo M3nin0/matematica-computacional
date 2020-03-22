@@ -50,3 +50,13 @@ int main()
 ```
 
 > O nome `fit` foi utilizado na etapa de preparação dos dados simplesmente por seguir um padrão de nomenclatura inspirado na biblioteca [scikit-learn](https://scikit-learn.org/)
+
+### Considerações sobre o código
+
+Com o código implementado, é necessário que algumas considerações sobre o mesmo sejam feitas.
+
+**Forma da implementação**: A maneira de implementação é simples e foi criada considerando somente as características fundamentas das formas da equação de Lagrange.
+
+**Otimização**: O código ganha em simplicidade, porém, com o aumento da quantidade de pontos pode ser que o mesmo passe a enfrentar problemas de otimização, isso ocorre já que, a maneira como o mesmo foi implementado realiza múltiplos cálculos e consome recursos auxíliares para tais operações.
+
+Um contorno a esta questão foi feito utilizando bibliotecas que já possuem otimizações de implementação, porém, é interessante deixar claro que para grandes quantidades de pontos, as operações de combinações na geração dos métodos de Lagrange devem ser reconsiderados.
