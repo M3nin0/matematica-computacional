@@ -16,7 +16,7 @@ Seguindo esta ideia, esta parte do código, nomeada de **Preparação dos dados*
 
 **Interpolação**: Através dos dados gerados na etapa anterior, a interpolação pode ser aplicada, esta que funciona da seguinte forma.
 
-Para cada polinômio de lagrange que precisa ser gerado, é inserido o termo independente $x$ e então, todos os dados que foram separados para os numeradores na etapa anterior são subtraídos por $x$ e então tem seu produtório calculado, com esta etapa feita, os elementos que já estão calculados do denominador, referentes ao polinômio que está sendo gerado são utilizados, para dividir o resultado do produtório.
+Para cada polinômio de Lagrange que precisa ser gerado, é inserido o termo independente *X* e então, todos os dados que foram separados para os numeradores na etapa anterior são subtraídos por *X* e tem seu produtório calculado, com esta etapa feita, os elementos que já estão calculados do denominador, referentes ao polinômio que está sendo gerado são utilizados, para dividir o resultado do produtório.
 
 Desta forma, os valores podem ser interpolados.
 

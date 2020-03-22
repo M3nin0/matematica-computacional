@@ -113,9 +113,7 @@ Após a decomposição, cada um dos polinômios gerados pode ser visualizado sep
     <img src="figuras/comportamento_polinomios.png">
 </div>
 
-Perceba que, para o caso do comportamento da função que estava sendo analizada, o aumento do grau do polinômio foi extretamente necessário para que houvesse a convergência entre o formato original e o interpolado.
-
-É interessante apontar também que, para o caso de outras funções sendo interpoladas, a depender de seu comportamento, o polinômio de maior grau nem seja o necessário, outros de menor grau já são o suficiente para a interpolação em boa parte dos pontos.
+Perceba que, para o caso do comportamento da função que estava sendo analizada, o aumento do grau do polinômio foi extretamente necessário para que houvesse a convergência entre o formato original e o interpolado, mas interessante apontar também que, para o caso de outras funções sendo interpoladas, a depender de seu comportamento, um polinômio de maior grau nem seja necessário, sendo um de menor grau suficiente para a interpolação em boa parte dos pontos
 
 **Teste com a variação da quantidade de pontos**: Após realizar a decomposição do polinômio interpolador, surgiu a curiosidade em entender como cada um dos pontos influência no processo de interpolação dos dados. Então, o processo de interpolação de Lagrange foi aplicado várias sobre o conjunto potência ($2^A$) da tabela de pontos, considerando que, para cada caso, um conjunto de pontos foi utilizando.
 
@@ -127,11 +125,11 @@ Ou seja, para a geração do primeiro polinômio interpolador $P_0$, apenas um p
 
 Através desse resultado é possível perceber como o ajuste vai sendo feito para o formato dos pontos que estão sendo considerados na interpolação.
 
-**Teste com vários valores gerados pela função interpoladora**: Com a finalização do teste anterior, como forma de testar o polinômio interpolador resultante de todo o processo, pontos dentro do intervalo interpolado, mas que não estavam na tabela começaram a ser testados.
+**Teste com vários valores gerados pela função interpoladora**: Com a finalização do teste anterior, como forma de testar o polinômio interpolador resultante de todo o processo, interpolações com pontos dentro do intervalo interpolado foram feitas.
 
-Os resultados foram condizentes, todos seguindo a lógica da curva que é modelada pelos pontos da tabela. Porém em todos os testes a função ficava muito "quadrada", uma curva sem nenhum tivo de suavização, soando apenas como a ligação de vários pontos por uma reta.
+Os resultados foram condizentes, todos seguindo a lógica da curva que é modelada pelos pontos da tabela. Porém, em todos os testes o comportamento interpolado tinha um comportamento "quadrado", sendo representado por uma curva sem nenhum tipo de suavização, parecendo apenas com a ligação de vários pontos por uma reta (Que era exatamente o que estava ocorrendo).
 
-Então, assumindo esse comportamento da função interpoladora, de ligar vários pontos, seguindo o comportamento interpolado, foi gerado alguns testes com uma boa variedade de pontos no polinômio de interpolação.
+Então, assumindo esse comportamento da função interpoladora, de ligar vários pontos, seguindo o comportamento interpolado, foi gerado alguns testes variando a quantidade de pontos interpolados através do polinômio de interpolação.
 
 <div align="center">
     <img src="figuras/interpolacao_varios_pontos.png">
