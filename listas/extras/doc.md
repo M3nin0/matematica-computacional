@@ -114,8 +114,51 @@ $$
 
 Novamente, todo o conteúdo utilizado nesta resposta foi retirado dos vídeos feitos por Roberto Brusnicki  em [seus vídeos sobre conversão de base numérica](https://www.youtube.com/watch?v=BJuoZMqh9Og), obrigado por compartilhar!
 
-#### Lista 2 - Sistemas lineares
+<!-- #### Lista 2 - Sistemas lineares -->
 
 #### Lista 3 - Interpolação por polinômios
 
 **1) Interpole, de forma genérica, um conjunto de dois pares de pontos**
+
+Com base nos exercícios realizados na lista 3 e também na forma como os polinômios de L vão sendo gerados, ao considerar dois pares de pontos, a figura geométrica que possívelmente representa a interpolação desses pares é uma reta, logo este exercício pode ser ilustrado pelas partes da Figura abaixo, onde a situação A representa a etapa inicial, onde temos apenas os pontos e a situação B é a solução do exercício.
+
+<div align="center">
+    <img src="imagens/passos_exercicio3_extra.png">
+</div>
+
+Desta forma, para resolver tal exercício de maneira genérica, considerando apenas a representação geométrica, faz-se necessário a realização do ajuste de uma reta, que será utilizada para a interpolação de tais pontos.
+
+Para isto, considere os seguintes pontos. 
+
+|        | $x_0$ | $x_1$ |
+|:------:|:-----:|-------|
+|   $x$  |   a   | c     |
+| $f(x)$ |   b   | d     |
+
+Ao realizar um ajuste linear dos mesmos temos que:
+
+Primeiro fazer o ajuste do coeficiente angular da reta ($m$)
+
+$$
+m = \frac{y_2 - y_1}{x_2 - x_1}
+$$
+
+$$
+m = \frac{d - b}{c - a}
+$$
+
+Com a determinação do coeficiente angular, fazemos
+
+$$
+y - y_1 = m * (x - x_1)
+$$
+
+$$
+y - b = \frac{d - b}{c - a} * x -2
+$$
+
+$$
+y = \frac{d - b}{c - a} * (x -2) + b
+$$
+
+**Observação**: Fazendo alguns testes antes de escrever a solução deste exercício, foi possível perceber que, aproximar um polinômio interpolador ou o ajuste de uma reta, para dois pontos, temos os mesmos resultados, o que influênciou na resposta deste exercício.
