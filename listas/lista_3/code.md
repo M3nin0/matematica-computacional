@@ -8,9 +8,7 @@ A ideia base utilizada para a implementação do método pode ser apresentada em
 
 **Preparação dos dados**: Como já apresentado durante as aulas da disciplina, a interpolação pelo método de lagrange é feita básicamente através do ajuste dos chamados polinômios de Lagrange, sendo estes apresentados da seguinte forma
 
-$$
-l_k\left(x\right)=\frac{\left(x-x_0\right)...\left(x\:-\:x_{k-1}\right)\left(x-x_{k+1}\right)...\:\left(x\:-\:x_n\right)}{\left(x_k-x_0\right)...\left(x_k\:-\:x_{k-1}\right)\left(x_k-x_{k+1}\right)...\left(x_k\:-\:x_n\right)}
-$$
+![](figuras/polinomio_lagrange.png)
 
 Ao visualizar a forma dos polinômios de lagrange é possível perceber que, o numerador é composto por operações que envolvem o valor independente da função $x$ que será interpolado e que no denominador está presente apenas os elementos já conhecidos. 
 
