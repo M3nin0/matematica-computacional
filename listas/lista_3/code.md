@@ -10,7 +10,7 @@ A ideia base utilizada para a implementação do método pode ser apresentada em
 
 ![](figuras/polinomio_lagrange.png)
 
-Ao visualizar a forma dos polinômios de lagrange é possível perceber que, o numerador é composto por operações que envolvem o valor independente da função $x$ que será interpolado e que no denominador está presente apenas os elementos já conhecidos. 
+Ao visualizar a forma dos polinômios de lagrange é possível perceber que, o numerador é composto por operações que envolvem o valor termo independente, que será interpolado e que, no denominador está presente apenas os elementos já conhecidos. 
 
 Seguindo esta ideia, esta parte do código, nomeada de **Preparação dos dados**, separa todos os dados que serão utilizados no numerador, na geração de cada polinômio de lagrange, ao mesmo tempo que já calcula os elementos do denominador, também referente a cada polinômio gerado.
 
