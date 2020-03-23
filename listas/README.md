@@ -19,3 +19,7 @@ Discente:
 **Conceitos base**
 
 - [Documento com os conceitos base para a matéria](https://github.com/M3nin0/matematica-computacional/blob/master/materiais/00-conceitos-base.pdf)
+
+<hr>
+
+Todo o conteúdo desse site está disponível no [Github](https://github.com/M3nin0/matematica-computacional)
