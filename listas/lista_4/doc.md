@@ -161,7 +161,7 @@ A Figura abaixo apresenta os passos "na mão" para a aplicação da regra do pon
 
 Para a realização desta etapa, foi feita a utilização da implementação da regra dos trapézios compostas.
 
-Para tal, primeiro foi feita a definição do polinômio $B$ dentro do código
+Para tal, primeiro o polinômio $B$ foi definindo dentro do código
 
 ```cpp
 double f(double x)
@@ -170,7 +170,7 @@ double f(double x)
 }
 ```
 
-Após a definição, o polinômio $B$ foi utilizado para gerar um conjunto de valores $[1, 17]$ para verificar o comportamento da integração neste intervalo crescente. 
+Após a definição, o polinômio $B$ foi utilizado para gerar um conjunto de valores $[1, 17]$ para verificar o comportamento da integração neste intervalo. 
 
 ```cpp
 std::vector<double> integrationsSplited;
@@ -204,20 +204,20 @@ for (double i: xt::arange(1, 1000))
     <img src="figuras/integracaon_intervalo_grande.png">
 </div>
 
-A hipótese levantada anteriormente foi confirmada, a convergência da integração numérica do polinômio $B$ é 10.5. Na Figura é possível perceber que, após um ponto, os valores não se alteram mais, mesmo com a quantidade crescentes de trapézios.
+A hipótese levantada anteriormente foi confirmada, a convergência da integração numérica do polinômio $B$ é 10.5. Na Figura é possível perceber que, depois de um certo ponto, os valores não se alteram mais, mesmo com a quantidade crescentes de trapézios.
 
 - 6°) Analise as diferenças encontradas – e tente generalizar seu resultado
 
-Com base nos resultados apresentados no passo anterior, foi possível perceber que a convergência do resultado da integração está em 10.5. Como forma de validar, o processo de integração definida foi feita a integração analítica definida do polinômio B.
+Com base nos resultados apresentados no passo anterior, foi possível perceber que a convergência do resultado da integração está em 10.5. Como forma de validar, o processo de aproximação da integração numérica, a integral analítica do polinômio $B$ foi feita.
 
 $$
 \int _1^2\:\left(12x^2-16x+6.5\right) = 10.5
 $$
 
-Isto é uma maneira de confirmar que o resultado aproximado pela integração numérica não difere dos resultados calculados analiticamente, o que nos permite afirmar que, neste caso, não houveram erros significativos durante a aproximação
+Isto é uma maneira de confirmar que o resultado aproximado pela integração numérica não difere dos resultados calculados analiticamente, o que nos permite afirmar que, neste caso, não houveram erros significativos durante a aproximação.
 
 **Considerações finais**: Durante a busca para a solução desta lista de exercícios, as seguintes conclusões puderam ser tomadas
 
-- O aumento da subdivisão de espaços (Tendendo para zero), faz com que a precisão seja maior, quando comparado com a integral analítica, chegando a um ponto em que, o aumento dos subespaços já não faz diferença e o valor integrado é o mesmo que a solução analítica;
+- O aumento da subdivisão de espaços (Tendendo para zero), faz com que a precisão seja maior, quando comparado com a integral analítica, chegando a um ponto em que, o aumento dos subespaços já não fazem diferença e o valor aproximado é o mesmo que a solução analítica entrega;
 
 - A interpretação geométrica para a integração é muito importante para que os métodos numéricos façam sentido e possam ser adaptados a diferentes casos;
