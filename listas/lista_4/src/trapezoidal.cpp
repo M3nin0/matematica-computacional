@@ -4,6 +4,7 @@
 #include "xtensor/xio.hpp"
 #include "xtensor/xview.hpp"
 #include "xtensor/xadapt.hpp"
+#include "xtensor/xindex_view.hpp"
 
 #include "trapezoidal.hpp"
 
@@ -30,8 +31,8 @@ double NumericalIntegration::TrapezoidalRule(double (*f)(double), double integra
 double NumericalIntegration::TrapezoidalRuleRepeated(double (*f)(double), double integralStart, double integralEnd, double parts)
 {
     double h = (integralEnd - integralStart) / parts;
-    
-    xt::xarray<double> yValues = Apply(f, xt::arange(integralStart, integralEnd + h, h));
+    xt::xarray<double> rangeValues = xt::arange(integralStart, integralEnd + h, h);
+    xt::xarray<double> yValues = Apply(f, xt::filter(rangeValues, rangeValues <= integralEnd));
     
     xt::xarray<double> trapezoidalBetweenInterval = 
                             xt::view(yValues, xt::drop(0, yValues.size()), xt::all());

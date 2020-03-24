@@ -20,9 +20,9 @@ double NumericalIntegration::RectangleRuleTable(const xt::xarray<double>& yValue
     double result = 0;    
     double step = (integralEnd - integralStart) / parts;
     
-    for(int dataIndex = 0; dataIndex < yValues.shape()[1]; ++dataIndex)
-    {                
-        result += yValues(dataIndex) * step;
+    for(double data: yValues)
+    {
+       result += data * step; 
     }
     return result;
 }
