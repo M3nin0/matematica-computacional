@@ -14,6 +14,7 @@ Discente:
 - [Lista 1](https://fmenino-cap-239.netlify.com/lista_1/)
 - [Lista 2](https://fmenino-cap-239.netlify.com/lista_2/)
 - [Lista 3](https://fmenino-cap-239.netlify.com/lista_3/)
+- [Lista 4](https://fmenino-cap-239.netlify.com/lista_4/)
 - [Lista extra](https://fmenino-cap-239.netlify.com/extras/)
 
 **Conceitos base**
