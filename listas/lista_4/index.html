@@ -1,0 +1,479 @@
+<!DOCTYPE html><html><head>
+  <title>Lista 4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../style.css">
+  <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="lista-4-integra%C3%A7%C3%A3o-num%C3%A9rica">Lista 4 - Integra&#xE7;&#xE3;o num&#xE9;rica</h2>
+
+<p>Quarta lista de exerc&#xED;cios da mat&#xE9;ria de matem&#xE1;tica computacional (CAP-239-4), do curso de p&#xF3;s-gradua&#xE7;&#xE3;o em Computa&#xE7;&#xE3;o Aplicada do Instituto Nacional de Pesquisas Espaciais</p>
+<p>Docentes:</p>
+<ul>
+<li>Dr. Leonardo B. L. Santos</li>
+<li>Dr. Reinaldo Rosa</li>
+</ul>
+<p>Discente:</p>
+<ul>
+<li>Felipe Menino Carlos</li>
+</ul>
+<h3 class="mume-header" id="exerc%C3%ADcios">Exerc&#xED;cios</h3>
+
+<p><strong>1) Mostre a &#xE1;rea da se&#xE7;&#xE3;o reta da figura apresentada no contexto abaixo</strong></p>
+<p>A determina&#xE7;&#xE3;o da &#xE1;rea da se&#xE7;&#xE3;o reta de rios &#xE9; lagos &#xE9; importante em projetos de preven&#xE7;&#xE3;o de enchentes (para o c&#xE1;lculo de vaz&#xE3;o da &#xE1;gua) e nos projetos de reservat&#xF3;rios (para c&#xE1;lculo do volume total de &#xE1;gua). A menos que dispositivos tipo sonar sejam usados na obten&#xE7;&#xE3;o do perfil do fundo de rios/lagos, o engenheiro civil deve trabalhar com valores de profundidade, obtidos em pontos discretos da superf&#xED;cie. Um exemplo t&#xED;pico de se&#xE7;&#xE3;o reta de um rio est&#xE1; mostrado na figura a seguir:</p>
+<div align="center">
+    <img src="figuras/superficie_agua_exe1.png">
+</div>
+<p>Para o in&#xED;cio deste exerc&#xED;cio, o primeiro passo foi definir a tabela de valores que poderia ser utilizada no processo de integra&#xE7;&#xE3;o, ent&#xE3;o, considerando a dist&#xE2;ncia da margem esquerda (Metros) como <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> e cada uma das profundidades como a vari&#xE1;vel dependente <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>, um tabela abaixo foi criada</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_ 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">x_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">x_4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>5</mn></msub></mrow><annotation encoding="application/x-tex">x_5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>6</mn></msub></mrow><annotation encoding="application/x-tex">x_6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>7</mn></msub></mrow><annotation encoding="application/x-tex">x_7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">x_8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>9</mn></msub></mrow><annotation encoding="application/x-tex">x_9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">x_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span></td>
+<td style="text-align:center">0</td>
+<td>2</td>
+<td>4</td>
+<td>6</td>
+<td>8</td>
+<td>10</td>
+<td>12</td>
+<td>14</td>
+<td>16</td>
+<td>18</td>
+<td>20</td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center">0</td>
+<td>1.8</td>
+<td>2.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>4.0</td>
+<td>3.6</td>
+<td>3.4</td>
+<td>2.8</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Com esta tabela a integra&#xE7;&#xE3;o j&#xE1; pode ser realizada. Aqui, todos os m&#xE9;todos apresentados em sala de aula poderia ser utilizados para a realiza&#xE7;&#xE3;o do processo, por&#xE9;m como uma forma de buscar o processo mais pr&#xE1;tico para a integra&#xE7;&#xE3;o, a regra dos trap&#xE9;zios composta foi utilizada.</p>
+<p>O fato da regra ser composta est&#xE1; intimamente relacionado com as caracter&#xED;sticas da tabela de dados, onde h&#xE1; diversos subintervalos que precisam ser considerados. As Figuras abaixo apresentam a solu&#xE7;&#xE3;o deste m&#xE9;todo &quot;na m&#xE3;o&quot;.</p>
+<div align="center">
+    <img src="figuras/exe_1_solucao.jpg">
+</div>
+<p>Um ponto relevante a este exerc&#xED;cio &#xE9; que, a quantidade de subdivis&#xF5;es inseridas precisa, necessariamente, ser a mesma da quantidade de itens presentes na tabela, isso ocorre j&#xE1; que, caso haja mais intervalos que pontos na tabela, n&#xE3;o &#xE9; poss&#xED;vel gerar tais valores sem a utiliza&#xE7;&#xE3;o de outras t&#xE9;cnicas.</p>
+<p><strong>Valida&#xE7;&#xE3;o</strong>: Todos os resultados gerados e apresentados acima, foram validados com a <a href="https://github.com/M3nin0/matematica-computacional/blob/master/listas/lista_4/code.md">implementa&#xE7;&#xE3;o do m&#xE9;todo</a> feita em C++</p>
+<p><strong>Sobre a escolha do m&#xE9;todo</strong>: Para este caso, a escolha da utiliza&#xE7;&#xE3;o da regra dos trap&#xE9;zios, como j&#xE1; informado, foi feito por uma quest&#xE3;o de praticidade de aplica&#xE7;&#xE3;o.</p>
+<p>Al&#xE9;m do motivo da praticidade, podem ser a aproxima&#xE7;&#xE3;o feita por um m&#xE9;todo &#xE9; melhor que outra, isso considerando os m&#xE9;todos de integra&#xE7;&#xE3;o por ret&#xE2;ngulos e por trap&#xE9;zios. Para avaliar as diferen&#xE7;as neste caso, foi feito a [implementa&#xE7;&#xE3;o da regra do ret&#xE2;ngulo], simples e composta, e ent&#xE3;o os dois m&#xE9;todos foram aplicados para verificar o resultado, que foram iguais nos dois casos.</p>
+<p>M&#xE9;todo dos ret&#xE2;ngulos</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp">xt<span class="token operator">::</span>xarray<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span> <span class="token function">yValues</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1.8</span><span class="token punctuation">,</span> <span class="token number">2.</span><span class="token punctuation">,</span> <span class="token number">4.</span><span class="token punctuation">,</span> <span class="token number">4.</span><span class="token punctuation">,</span> <span class="token number">6.</span><span class="token punctuation">,</span> <span class="token number">4.</span><span class="token punctuation">,</span> <span class="token number">3.6</span><span class="token punctuation">,</span> <span class="token number">3.4</span><span class="token punctuation">,</span> <span class="token number">2.8</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+NumericalIntegration<span class="token operator">::</span><span class="token function">RectangleRuleTable</span><span class="token punctuation">(</span>yValues<span class="token punctuation">,</span> <span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">20.</span><span class="token punctuation">,</span> <span class="token number">10.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Sa&#xED;da: 63.2</span>
+</pre><p>M&#xE9;todo dos ret&#xE2;ngulos</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp">NumericalIntegration<span class="token operator">::</span><span class="token function">TrapezoidalRulePoints</span><span class="token punctuation">(</span>yValues<span class="token punctuation">,</span> <span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">20.</span><span class="token punctuation">,</span> <span class="token number">10.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Sa&#xED;da: 63.2</span>
+</pre><blockquote>
+<p>Para este caso o resultado nos dois m&#xE9;todos foi o mesmo, por&#xE9;m isto n&#xE3;o &#xE9; uma regra, pode acontecer de um m&#xE9;todo apresentar mais precis&#xE3;o que outro.</p>
+</blockquote>
+<p><strong>Interpola&#xE7;&#xE3;o para aumentor de subdivis&#xF5;es do espa&#xE7;o</strong>: Ao trabalhar com as tabelas, acabei ficando com uma pequena curiosidade, at&#xE9; citei sobre isto no t&#xF3;pico de solu&#xE7;&#xE3;o do exerc&#xED;cio, o aumento da quantidade de subespa&#xE7;os em um contexto em que os dados s&#xE3;o tabelas. A solu&#xE7;&#xE3;o que encontrei para aumentar os subespa&#xE7;os foi interpolar os dados presentes na tabela, isso faz com que exista um polin&#xF4;mio que explica o comportamento da fun&#xE7;&#xE3;o em todos intervalos de valores da tabela, o que permite fazer espa&#xE7;os menores de trap&#xE9;zios.</p>
+<p>Para fazer este teste, uma pequena implementa&#xE7;&#xE3;o do m&#xE9;todo dos trap&#xE9;zios foi feita em Python. Em seguida a fun&#xE7;&#xE3;o de interpola&#xE7;&#xE3;o <code>spline</code> do pacote <code>scikit-learn</code> foi utilizada para a interpola&#xE7;&#xE3;o dos pontos na tabela, com a fun&#xE7;&#xE3;o interpolada dispon&#xED;vel, a quantidade de intervalos pode ser aumentada.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">trapezoidal_rule</span><span class="token punctuation">(</span>fnc<span class="token punctuation">,</span> integral_start<span class="token punctuation">,</span> integral_end<span class="token punctuation">,</span> parts<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    h <span class="token operator">=</span> <span class="token punctuation">(</span>integral_end <span class="token operator">-</span> integral_start<span class="token punctuation">)</span> <span class="token operator">/</span> parts
+    interval <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>integral_start<span class="token punctuation">,</span> integral_end <span class="token operator">+</span> h<span class="token punctuation">,</span> h<span class="token punctuation">)</span>
+    
+    y_values <span class="token operator">=</span> fnc<span class="token punctuation">(</span>interval<span class="token punctuation">[</span>interval <span class="token operator">&lt;=</span> integral_end<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> y_values<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>y_values<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> y_values<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">return</span> result <span class="token operator">*</span> <span class="token punctuation">(</span>h <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</pre><p>Abaixo a fun&#xE7;&#xE3;o de interpola&#xE7;&#xE3;o, permitindo um subintervalo maior</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> scipy<span class="token punctuation">.</span>interpolate
+
+x <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+fx <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1.8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">3.6</span><span class="token punctuation">,</span> <span class="token number">3.4</span><span class="token punctuation">,</span> <span class="token number">2.8</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+fx_interp <span class="token operator">=</span> scipy<span class="token punctuation">.</span>interpolate<span class="token punctuation">.</span>interp1d<span class="token punctuation">(</span>x<span class="token punctuation">,</span> fx<span class="token punctuation">)</span>
+
+trapezoidal_rule<span class="token punctuation">(</span>fx_interp<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span>
+</pre><p>Desta forma, os pontos podem ser integrados considerando mais partes, mesmo que as mesmas n&#xE3;o estejam definidas na tabela de dados. Pode ser que, mesmo aumentando a quantidade de pontos, problemas com precis&#xE3;o sejam enfrentados, j&#xE1; que, com a aplica&#xE7;&#xE3;o de tal ideia, erros associados a interpola&#xE7;&#xE3;o podem intererir no resultado da integra&#xE7;&#xE3;o.</p>
+<blockquote>
+<p>O m&#xE9;todo de interpola&#xE7;&#xE3;o spline n&#xE3;o foi abordado durante as aulas, por&#xE9;m, como uma forma de realizar testes e a valida&#xE7;&#xE3;o da ideia de interpola&#xE7;&#xE3;o para a possibilidade de aumentar os subespa&#xE7;os ele foi utilizado.</p>
+</blockquote>
+<p><strong>2) Seguindo os passos descritos abaixo, apresente os resultados</strong></p>
+<ul>
+<li>Escolha um polin&#xF4;mio A, de ordem 3;</li>
+<li>Interpole A por um de ordem 2, B, dados 3 pontos</li>
+<li>Calcule a integral de A e a integral de B analiticamente</li>
+<li>Calcule a Integral de B pela Regra do ponto m&#xE9;dio</li>
+<li>Calcule a Integral de B pela Regra dos trap&#xE9;zios, para n crescente</li>
+<li>Analise as diferen&#xE7;as encontradas &#x2013; e tente<br>
+generalizar seu resultado</li>
+</ul>
+<p>Vamos a cada um dos passos do exerc&#xED;cio</p>
+<ul>
+<li>1&#xB0;) Defini&#xE7;&#xE3;o do polin&#xF4;mio A</li>
+</ul>
+<p>O polin&#xF4;mio A foi definido como</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">A = 2x^3 + 3x^2 - 3x + 0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span></span></p>
+<p>Tal polin&#xF4;mio pode ser representado graficamente como</p>
+<div align="center">
+    <img src="figuras/funcao_pol_A.png">
+</div>
+<ul>
+<li>2&#xB0;) Interpole A por um de ordem 2, B, dados 3 pontos</li>
+</ul>
+<p>Para este caso, a interpola&#xE7;&#xE3;o foi feita atrav&#xE9;s com m&#xE9;todo de Lagrange com a sele&#xE7;&#xE3;o de 3 pontos gerados com o polin&#xF4;mio A.</p>
+<div align="center">
+    <img src="figuras/exe_2_passo_12.jpg">
+</div>
+<div align="center">
+    <img src="figuras/exe_2_passo_12_2.jpg">
+</div>
+<ul>
+<li>3&#xB0;) Calcule a integral de A e a integral de B analiticamente</li>
+</ul>
+<div align="center">
+    <img src="figuras/exe_2_passo_3.jpg">
+</div>
+<ul>
+<li>4&#xB0;) Calcule a Integral de B pela Regra do ponto m&#xE9;dio</li>
+</ul>
+<p>Para a aplica&#xE7;&#xE3;o da regra do ponto m&#xE9;dio, foi necess&#xE1;rio encontrar os limites de integra&#xE7;&#xE3;o. A defini&#xE7;&#xE3;o foi feita de acordo com os pontos selecionados para a gera&#xE7;&#xE3;o do polin&#xF4;mio <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>, sendo o limite inferior o valor do menor valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> dos pontos selecionados, e o maior valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> utilizado para o limite superior.</p>
+<p>Para tal decis&#xE3;o, as integrais calculadas no passo anterior foram visualizadas graficamente, da mesma forma que apresentado abaixo</p>
+<div align="center">
+    <img src="figuras/pol_AB.png">
+</div>
+<p>Perceba que outros valores poderia ser utilizados, por&#xE9;m, para este caso foi assumido que a integral entre cada polin&#xF4;mio deveria ter uma rela&#xE7;&#xE3;o e que os valores gerados pelo comportamento para antes ou depois dos limites interpolados n&#xE3;o devem ser considerados.</p>
+<p>A Figura abaixo apresenta os passos &quot;na m&#xE3;o&quot; para a aplica&#xE7;&#xE3;o da regra do ponto m&#xE9;dio.</p>
+<div align="center">
+    <img src="figuras/exe_2_passo_4.jpg">
+</div>
+<div align="center">
+    <img src="figuras/exe_2_passo_4_1.jpg">
+</div>
+<ul>
+<li>5&#xB0;) Calcule a Integral de B pela Regra dos trap&#xE9;zios, para n crescente</li>
+</ul>
+<p>Para a realiza&#xE7;&#xE3;o desta etapa, foi feita a utiliza&#xE7;&#xE3;o da implementa&#xE7;&#xE3;o da regra dos trap&#xE9;zios compostas.</p>
+<p>Para tal, primeiro foi feita a defini&#xE7;&#xE3;o do polin&#xF4;mio <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> dentro do c&#xF3;digo</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token keyword">double</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">*</span> std<span class="token operator">::</span><span class="token function">pow</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">16</span> <span class="token operator">*</span> x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">6.5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p>Ap&#xF3;s a defini&#xE7;&#xE3;o, o polin&#xF4;mio <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> foi utilizado para gerar um conjunto de valores <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mn>17</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[1, 17]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">7</span><span class="mclose">]</span></span></span></span> para verificar o comportamento da integra&#xE7;&#xE3;o neste intervalo crescente.</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp">std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span> integrationsSplited<span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">double</span> i<span class="token operator">:</span> xt<span class="token operator">::</span><span class="token function">arange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    integrationsSplited<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>NumericalIntegration<span class="token operator">::</span><span class="token function">TrapezoidalRuleRepeated</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">2.</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p>Os valores resultantes da integra&#xE7;&#xE3;o feita acima s&#xE3;o apresentados graficamente na Figura abaixo.</p>
+<div align="center">
+    <img src="figuras/integracaon_intervalo_pequeno.png">
+</div>
+<p>Ao visualizar o resultado &#xE9; poss&#xED;vel perceber que a converg&#xEA;ncia do m&#xE9;todo est&#xE1; pr&#xF3;xima a 10.5, j&#xE1; que, quanto maior a quantidade de trap&#xE9;zios utilizados, mais o resultado se aproxima de tal valor.</p>
+<p>Como forma de testar, o mesmo processo feito acima foi realizado novamente, por&#xE9;m aqui, com uma quantidade de trap&#xE9;zios no intervalo <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0, 1000)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp">std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span> integrations1000<span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">double</span> i<span class="token operator">:</span> xt<span class="token operator">::</span><span class="token function">arange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    integrations1000<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>NumericalIntegration<span class="token operator">::</span><span class="token function">TrapezoidalRuleRepeated</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">2.</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><div align="center">
+    <img src="figuras/integracaon_intervalo_grande.png">
+</div>
+<p>A hip&#xF3;tese levantada anteriormente foi confirmada, a converg&#xEA;ncia da integra&#xE7;&#xE3;o num&#xE9;rica do polin&#xF4;mio <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> &#xE9; 10.5. Na Figura &#xE9; poss&#xED;vel perceber que, ap&#xF3;s um ponto, os valores n&#xE3;o se alteram mais, mesmo com a quantidade crescentes de trap&#xE9;zios.</p>
+<ul>
+<li>6&#xB0;) Analise as diferen&#xE7;as encontradas &#x2013; e tente generalizar seu resultado</li>
+</ul>
+<p>Com base nos resultados apresentados no passo anterior, foi poss&#xED;vel perceber que a converg&#xEA;ncia do resultado da integra&#xE7;&#xE3;o est&#xE1; em 10.5. Como forma de validar, o processo de integra&#xE7;&#xE3;o definida foi feita a integra&#xE7;&#xE3;o anal&#xED;tica definida do polin&#xF4;mio B.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>&#x222B;</mo><mn>1</mn><mn>2</mn></msubsup><mtext>&#x2005;</mtext><mrow><mo fence="true">(</mo><mn>12</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>16</mn><mi>x</mi><mo>+</mo><mn>6.5</mn><mo fence="true">)</mo></mrow><mo>=</mo><mn>10.5</mn></mrow><annotation encoding="application/x-tex">\int _1^2\:\left(12x^2-16x+6.5\right) = 10.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.4759580000000003em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">&#x222B;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5640080000000003em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord">1</span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">6</span><span class="mord">.</span><span class="mord">5</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span></span></p>
+<p>Isto &#xE9; uma maneira de confirmar que o resultado aproximado pela integra&#xE7;&#xE3;o num&#xE9;rica n&#xE3;o difere dos resultados calculados analiticamente, o que nos permite afirmar que, neste caso, n&#xE3;o houveram erros significativos durante a aproxima&#xE7;&#xE3;o</p>
+<p><strong>Considera&#xE7;&#xF5;es finais</strong>: Durante a busca para a solu&#xE7;&#xE3;o desta lista de exerc&#xED;cios, as seguintes conclus&#xF5;es puderam ser tomadas</p>
+<ul>
+<li>
+<p>O aumento da subdivis&#xE3;o de espa&#xE7;os (Tendendo para zero), faz com que a precis&#xE3;o seja maior, quando comparado com a integral anal&#xED;tica, chegando a um ponto em que, o aumento dos subespa&#xE7;os j&#xE1; n&#xE3;o faz diferen&#xE7;a e o valor integrado &#xE9; o mesmo que a solu&#xE7;&#xE3;o anal&#xED;tica;</p>
+</li>
+<li>
+<p>A interpreta&#xE7;&#xE3;o geom&#xE9;trica para a integra&#xE7;&#xE3;o &#xE9; muito importante para que os m&#xE9;todos num&#xE9;ricos fa&#xE7;am sentido e possam ser adaptados a diferentes casos;</p>
+</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
