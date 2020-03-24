@@ -1,4 +1,4 @@
-## Lista 4 - Interpolação por polinômios
+## Lista 4 - Integração numérica
 
 Quarta lista de exercícios da matéria de matemática computacional (CAP-239-4), do curso de pós-graduação em Computação Aplicada do Instituto Nacional de Pesquisas Espaciais
 
