@@ -36,7 +36,7 @@ O fato da regra ser composta está intimamente relacionado com as característic
 
 Um ponto relevante a este exercício é que, a quantidade de subdivisões inseridas precisa, necessariamente, ser a mesma da quantidade de itens presentes na tabela, isso ocorre já que, caso haja mais intervalos que pontos na tabela, não é possível gerar tais valores sem a utilização de outras técnicas.
 
-**Validação**: Todos os resultados gerados e apresentados acima, foram validados com a [implementação do método](https://github.com/M3nin0/matematica-computacional/blob/master/listas/lista_4/code.md) feita em C++
+**Validação**: Todos os resultados gerados e apresentados acima, foram validados com a [implementação do método](https://github.com/M3nin0/matematica-computacional/blob/master/listas/lista_4/code.pdf) feita em C++
 
 **Sobre a escolha do método**: Para este caso, a escolha da utilização da regra dos trapézios, como já informado, foi feito por uma questão de praticidade de aplicação.
 

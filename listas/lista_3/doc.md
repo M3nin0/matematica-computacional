@@ -33,7 +33,7 @@ Discente:
     <img src="figuras/interp_4.jpg">
 </div>
 
-**Avaliação do resultado**: Como forma de avaliar o resultado, foi feita a utilização do Método de Eliminação Gaussiana (Implementado na [lista 2](https://fmenino-cap-239.netlify.com/lista_2/)) e também do método de interpolação de Lagrange ([Implementado](https://github.com/M3nin0/matematica-computacional/blob/master/listas/lista_3/code.md) em C++)
+**Avaliação do resultado**: Como forma de avaliar o resultado, foi feita a utilização do Método de Eliminação Gaussiana (Implementado na [lista 2](https://fmenino-cap-239.netlify.com/lista_2/)) e também do método de interpolação de Lagrange ([Implementado](https://github.com/M3nin0/matematica-computacional/blob/master/listas/lista_3/code.pdf) em C++)
 
 **2) Para uma tabela com 4 pontos, vá, progressivamente (de 1 a 3), aumentando o grau do polinômio interpolador - compare graficamente as soluções e discuta uma "amostragem preferencial"**
 

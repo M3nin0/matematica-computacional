@@ -6,6 +6,6 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-sign-compare -std=c+
 find_package(xtl REQUIRED)
 find_package(xtensor REQUIRED)
 
-add_executable(lista_4 src/main.cpp src/trapezoidal.cpp)
+add_executable(lista_4 src/main.cpp src/trapezoidal.cpp src/rectangle.cpp)
 
 target_link_libraries(lista_4 xtensor)

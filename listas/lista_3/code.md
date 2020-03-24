@@ -1,6 +1,6 @@
 ## Implementação do método interpolação de Lagrange
 
-A implementação do método de interpolação de Lagrange, para a lista de exercícios 3 da matéria de matemática computacional (CAP-239-4) do Instituto Nacional de Pesquisas Espaciais, foi feito utilizando a linguagem de programação C++, os códigos implementados e conceitos são apresentados nas seções abaixo.
+A implementação do método de interpolação de Lagrange, para a lista de exercícios 3 da disciplina de matemática computacional (CAP-239-4) do Instituto Nacional de Pesquisas Espaciais, foi feito utilizando a linguagem de programação C++, os códigos implementados e conceitos são apresentados nas seções abaixo.
 
 ### Ideia base e implementação
 
