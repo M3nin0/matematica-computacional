@@ -145,7 +145,7 @@ Para tal decisão, as integrais calculadas no passo anterior foram visualizadas 
     <img src="figuras/pol_AB.png">
 </div>
 
-Perceba que outros valores poderia ser utilizados, porém, para este caso foi assumido que a integral entre cada polinômio deveria ter uma relação e que os valores gerados pelo comportamento para antes ou depois dos limites interpolados não devem ser considerados.
+Perceba que outros valores poderia ser utilizados, porém, para este caso, foi assumido que o comportamento anterior ou após os pontos interpolados podem não representar a realidade/comportamento da função aproximada, por isso, só foram considerados os valores dentro deste intervalo.
 
 A Figura abaixo apresenta os passos "na mão" para a aplicação da regra do ponto médio.
 
