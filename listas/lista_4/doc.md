@@ -40,7 +40,7 @@ Um ponto relevante a este exercício é que, a quantidade de subdivisões inseri
 
 **Sobre a escolha do método**: Para este caso, a escolha da utilização da regra dos trapézios, como já informado, foi feito por uma questão de praticidade de aplicação.
 
-Além do motivo da praticidade, podem ser a aproximação feita por um método é melhor que outra, isso considerando os métodos de integração por retângulos e por trapézios. Para avaliar as diferenças neste caso, foi feito a [implementação da regra do retângulo], simples e composta, e então os dois métodos foram aplicados para verificar o resultado, que foram iguais nos dois casos.
+Além do motivo da praticidade, podem ser a aproximação feita por um método é melhor que outra, isso considerando os métodos de integração por retângulos e por trapézios. Para avaliar as diferenças neste caso, foi feito a [implementação da regra do retângulo](https://github.com/M3nin0/matematica-computacional/blob/master/listas/lista_4/code.pdf), simples e composta, e então os dois métodos foram aplicados para verificar o resultado, que foram iguais nos dois casos.
 
 Método dos retângulos
 ```cpp
@@ -51,7 +51,7 @@ NumericalIntegration::RectangleRuleTable(yValues, 0., 20., 10.);
 // Saída: 63.2
 ```
 
-Método dos retângulos
+Método dos trapézios
 ```cpp
 NumericalIntegration::TrapezoidalRulePoints(yValues, 0., 20., 10.);
 
