@@ -17,7 +17,7 @@ function [x, y] = rungeKuttaSolverEDO(x0, xn, h, y, fncEdo)
       xn = x(i - 1);
       yn = y(i - 1);
       
-      y(i) = yn + (1/6) * sum(calcRungeKuttaK(xn, yn, h, fncEdo));
+      y(i) = yn + (1/6) * calcRungeKuttaK(xn, yn, h, fncEdo);
     end
 endfunction
 
@@ -29,4 +29,5 @@ function k = calcRungeKuttaK(xn, yn, h, fncEdo)
   
   k(2) = 2 * k(2);
   k(3) = 2 * k(3);
+  k = sum(k);
 end

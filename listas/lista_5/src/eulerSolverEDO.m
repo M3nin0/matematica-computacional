@@ -1,6 +1,6 @@
 function [x, y] = eulerSolverEDO(x0, xn, h, y, fncEdo)
-%EULERSOLVEREDO Função para aproximação de equações diferenciais utilizando o 
-% método de Euler
+  %EULERSOLVEREDO Função para aproximação de equações diferenciais utilizando o 
+  %método de Euler
   %   Parâmetros
   %       x0 (double) Valor inicial de x (x0 <= x <= xn)
   %       xn (double) Valor final de x (x0 <= x <= xn)
