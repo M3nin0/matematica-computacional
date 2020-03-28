@@ -221,3 +221,5 @@ Isto é uma maneira de confirmar que o resultado aproximado pela integração nu
 - O aumento da subdivisão de espaços (Tendendo para zero), faz com que a precisão seja maior, quando comparado com a integral analítica, chegando a um ponto em que, o aumento dos subespaços já não fazem diferença e o valor aproximado é o mesmo que a solução analítica entrega;
 
 - A interpretação geométrica para a integração é muito importante para que os métodos numéricos façam sentido e possam ser adaptados a diferentes casos;
+
+- A ordem dos tipos de métodos que foram aplicados nos exercícios são: Formulas de Quadratura > Newton-cotes > Regra do trapézio (Caso particular de newton-cotes)
