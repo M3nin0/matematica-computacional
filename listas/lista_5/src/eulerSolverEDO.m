@@ -5,6 +5,7 @@ function [x, y] = eulerSolverEDO(x0, xn, h, y, fncEdo)
   %       x0 (double) Valor inicial de x (x0 <= x <= xn)
   %       xn (double) Valor final de x (x0 <= x <= xn)
   %       h  (double) Tamanho do intervalo entre o x0 e xn
+  %       y  (double) Valor inicial da função (y0)
   %       fncEdo (function) Função a ser aproximada
   %   Retorno
   %       x (array) Valores gerados de X
