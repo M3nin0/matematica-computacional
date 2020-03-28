@@ -11,6 +11,8 @@ Discente:
 
 **Sobre este documento**:  As seções criadas abaixo representam o momento da disciplina em que cada questão extra foi passada
 
+*As respostas abaixo representam minha interpretação dos exercícios, caso você identifique afirmações problemáticas, me avise, assim posso aprender mais. Obrigado*
+
 #### Lista 1 - Conversão de base numérica
 
 **1) Qual a vantagem de utilizar bases numéricas maiores ? e menores ?**
