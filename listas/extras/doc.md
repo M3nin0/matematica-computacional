@@ -114,7 +114,6 @@ $$
 
 Novamente, todo o conteúdo utilizado nesta resposta foi retirado dos vídeos feitos por Roberto Brusnicki  em [seus vídeos sobre conversão de base numérica](https://www.youtube.com/watch?v=BJuoZMqh9Og), obrigado por compartilhar!
 
-<!-- #### Lista 2 - Sistemas lineares -->
 
 #### Lista 3 - Interpolação por polinômios
 
@@ -162,3 +161,92 @@ y = \frac{d - b}{c - a} * (x -2) + b
 $$
 
 **Observação**: Fazendo alguns testes antes de escrever a solução deste exercício, foi possível perceber que, aproximar um polinômio interpolador ou o ajuste de uma reta, para dois pontos, temos os mesmos resultados, o que influênciou na resposta deste exercício.
+
+**2) Um polinômio pode ser melhor que outro ?**
+
+Para responder esta pergunta, vamos a um exemplo. Considere um conjunto de 3 pontos e a necessidade da realização de uma interpolação sobre esses pontos. Aplicar tal interpolação utilizando um polinômio de grau 1 pode será o suficiente para a obtenção de um bom resultado de interpolação, porém ao aumentar o grau do polinômio interpolador para 2, pode-se obter bons resultados.
+
+Desta forma, considerando o contexto apresentado acima, é possível afirmar que um polinômio é melhor que outro.
+
+**Lembre-se**: Como já foi discutido em sala de aula, qualidade (Neste caso, 'ser melhor'), indica adequação ao uso e contexto.
+
+**3) O polinômio interpolador é único para qualquer grau ?**
+
+Seguindo a descrição de um polinômio interpolador, `um polinômio só é único quando seu grau está associado a quantidade de pontos` ($n - 1$)
+
+Desta forma, a depender a disposição dos pontos, podem existir infinitos polinômios de maior grau que a quantidade de pontos que possam interpolar os pontos considerados.
+
+**Sobre a ideia**: Para ficar claro a ideia utilizada na formulação 'genérica' da resposta acima, vou apresentar a ideia que utilizei, que é derivada de um exposição apresentada durante as aulas. Considere 3 pontos, agora considere que, podem existir polinômios de grau 3 ou maior que possam passar exatamente por esses elementos. 
+
+**Adendo apresentado pelo professor**: Ao considerar a ideia acima é importante que uma informação fique clara e bem definida. `Não é porque a interpolação foi feita com um polinômio de grau 3, que o comportamento modelado é necessariamente cúbido`, sendo que esta regra vale para demais contexto que você pode vir a pensar.
+
+**4) Aumentar o grau é simplesmente concatenar novo termo/coeficiente ?**
+
+Não, o comportamento geral do polinômio é criado através de todos os seus termos. Ao adicionar um novo termo, todos os demais devem ser reajustados para trabalhar 'seguindo'/compondo o comportamento geral.
+
+Durante a realização da [lista de exercícios 3](https://fmenino-cap-239.netlify.com/lista_3/), testes foram feitos com a decomposição dos polinômios. Tal fato é um exemplo que apenas a composição dos polinômios não representa o aumento de seu grau, o comportamento de cada um deles foi modelado já considerando um grau superior.
+
+#### Lista 4 - Integração numérica
+
+**1) Para melhorar os resultados da integração, o que vale mais a pena: aumentar o grau do polinômio interpolador ou “tender h a 0” ?**
+
+De uma maneira geral, podemos considerar que o aumento do `h` pode ser bastante útil para os métodos de integração numérica que fazem a utilização dos polinômios, isso já que, quanto mais se aproxima de zero, maior será a subdivisão realizada sob a função que está sendo integrada. O resultado de tal aproximação a zero é que, cada subintervalo será tão pequeno, que sua visualização será linear.
+
+Pode ser que o aumento do grau do polinômio seja útil e necessário, porém a depender do contexto, comportamento modelado e quantidade de pontos considerados, os erros gerados com os polinômios (Considerando os métodos vistos em sala de aula) podem interferir muito nos resultados da integração.
+
+**2) Os métodos que vimos em sala são aplicáveis ao cálculo de integrais múltiplas?**
+
+Considerando a maneira como as integrais múltiplas são calculadas é possível afirmar que os métodos vistos em sala podem ser utilizados para o cálculo dessas.
+
+De maneira geral, o que será feito é, utilizar a saída do cálculo de uma integral como entrada para o processo de outra integração. Para entender melhor este processo, vejamos um exemplo.
+
+Considerando a seguinte integral dupla, façamos seu calculo utilizando a regra dos trapézios.
+
+$$
+\int _{-5}^5\:\int _{-3}^3\:x^2+y^2dx\:dy
+$$
+
+Para iniciar, os valores de $x$ e $x$ utilizados são gerados através dos intervalos definidos na integral.
+
+```matlab
+x = -3:.1:3; 
+y = -5:.1:5; 
+[X,Y] = meshgrid(x,y);
+```
+
+Com os valores gerados, os mesmos são aplicados na formula da equação $x^2 + y^2$
+
+```matlab
+F = X.^2 + Y.^2;
+```
+
+Após a geração desses valores, os mesmos podem ser utilizados para a integração com o método dos trapézios.
+
+```matlab
+I = trapz(y,trapz(x,F,2))
+% I = 680.2000
+```
+
+> Exemplo adaptado da página de [documentação do Matlab](https://www.mathworks.com/help/matlab/ref/trapz.html)
+
+Em suma, o que o exemplo apresenta é que, para a utilização do método da regra dos trapézios em integrais multiplas é necessário trabalhar cada uma das integrais separadamente e então o resultado de uma ser considerada para a geração do resultado de outra integral.
+
+Através de uma interpretação geométrica é possível afirmar que os passos apresentados fazem sentido. Considere o cálculo de um volume através de uma integral dupla, o que é feito essencialmente é, primeiro o cálculo da base da geometria analisada e em seguida o calculo da altura. Ao olhar para cada uma dessas operações, é possível entender a natureza de uso dos resultados entre elas, que segue um contexto parecido com o que foi apresentado no exemplo anterior.
+
+<!-- Como considerar as direções de integração ? Aqui está sendo considerado que o processo de integração vai da esquerda para a direita ou da direta para a esquerda ? Se sim, não posso simplesmente fazer a integração numérica e alterar o sinal ? -->
+
+#### Lista 5 - Soluções numéricas de Equações Diferenciais
+
+**1) O que é uma função? Função X tabela de pontos X interpolação**
+
+Antes da interpretação de representações que as funções possuem dentro da matemática, onde são utilizadas para basicamente representar ou modelar ou certo comportamento, funções são objetos associativos, que vínculam certos elementos.
+
+Analisando por este lado, ao considerar uma função, uma tabela de pontos e o resultado de uma interpolação, conseguimos perceber que essas tem uma ligação, o `fato de fazer relacionamentos`. Claro que é necessário citar que, nem sempre os mesmos processos podem ser feitos com cada um dos elementos citados. 
+
+Indo para o contexto de representação que as funções possuem, podemos dar explicações sobre cada um dos conceitos apresentados anteriormente, onde:
+
+- Funções: Podem ser vistas como a representação genérica de um determinado comportamento;
+- Tabela de pontos: Representação física de um determinado comportamento, não possuindo explicitamente a relação que seus `relacionamentos` possuem, o que não ocorrre nas `funções`, definidas anteriormente;
+- Interpolação: Busca criar uma representação de um comportamento genérico, ou seja, busca através de um determinado conjunto de pontos ou mesmo função, criar uma forma de representar esses criando uma forma de relação explicita entre os elementos.
+
+> As definições feitas acima estão bastante distantes de definições formais. Elas são básicamentes formas de intepretação encontradas para ficar mais fácil entender cada um dos métodos vistos em sala de aula
