@@ -155,7 +155,7 @@ Então, a mesma foi resolvida através do método analítico, que foi utilizado 
     <img src="figuras/error_rk4_h_1.png">
 </div>
 
-Até este teste, todos os demais feitos com o método de Runge-Kutta apresentaram erro relativo igual a 0, para todos os pontos estimados, então, ao ver este resultado, mesmo o erro sendo muito pequeno, uma pequena investigação foi feita. Começando diminuíndo o valor de $h$, para verificar se este pequeno erro ia crescer ou diminuir.
+Até este teste, todos os demais feitos com o método de Runge-Kutta apresentaram erro relativo igual a 0, para todos os pontos estimados, então, ao ver este resultado, mesmo o erro sendo muito pequeno, uma investigação foi iniciada. Começando diminuíndo o valor de $h$, para verificar se este pequeno erro ia crescer ou diminuir.
 
 <div align="center">
     <img src="figuras/error_rk4_h_01.png">
@@ -167,7 +167,7 @@ Certo, o erro apresentou certo aumento, então, o $h$ foi reduzido mais uma vez
     <img src="figuras/error_rk4_h_001.png">
 </div>
 
-Bem, aqui o erro está maior que os anteriores, porém ainda são erros muito pequenos. Então, uma nova investigação foi feito, esta feita diretamente nos dados gerados. Ao visualizar os dados, o problema com o erro foi percebido.
+Bem, aqui o erro está maior que os anteriores, porém ainda são erros muito pequenos. Então, uma nova investigação foi feita, visualizar os dados, fazendo isso, o problema foi identificado.
 
 Todo o código é implementado utilizando [Octave](https://www.gnu.org/software/octave/) e ao olhar os valores foi possível perceber, estes pequenos erros estão relacionados a maneira como é feita a representação numérica na linguagem. Esses erros estão associados a valores presentes após 15 ou 16 casas decimais. A tabela abaixo apresenta um exemplo de valor real e aproximado que gerou um erro.
 
@@ -178,6 +178,6 @@ Todo o código é implementado utilizando [Octave](https://www.gnu.org/software/
 
 Isso faz com que o erro relativo seja algo como `6.709863883355365e-16` que é um dos erros apresentados nos gráficos criados para análise.
 
-Com isto é possível perceber que, mesmo trabalhando com computadores atuais, em linguagens especializadas para o cálculo numérico pode-se enfrentar problemas com a precisão dos valores numéricos.
+Com isto é possível perceber que, mesmo trabalhando com computadores atuais, em linguagens especializadas para computação numérica pode-se enfrentar problemas com a precisão dos valores.
 
 Estes são erros bem pequenos, não apresentando mudanças gerais nos resultados, porém, é interessante notar detalhes como este, já que, a depender do método que está sendo utilizado e seu objetivo de aplicação esses mudanças pequenas podem torna-se grandes o suficiente para causar problemas nos resultados.

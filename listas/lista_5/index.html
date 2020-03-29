@@ -423,7 +423,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <div align="center">
     <img src="figuras/error_rk4_h_1.png">
 </div>
-<p>At&#xE9; este teste, todos os demais feitos com o m&#xE9;todo de Runge-Kutta apresentaram erro relativo igual a 0, para todos os pontos estimados, ent&#xE3;o, ao ver este resultado, mesmo o erro sendo muito pequeno, uma pequena investiga&#xE7;&#xE3;o foi feita. Come&#xE7;ando diminu&#xED;ndo o valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>, para verificar se este pequeno erro ia crescer ou diminuir.</p>
+<p>At&#xE9; este teste, todos os demais feitos com o m&#xE9;todo de Runge-Kutta apresentaram erro relativo igual a 0, para todos os pontos estimados, ent&#xE3;o, ao ver este resultado, mesmo o erro sendo muito pequeno, uma investiga&#xE7;&#xE3;o foi iniciada. Come&#xE7;ando diminu&#xED;ndo o valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>, para verificar se este pequeno erro ia crescer ou diminuir.</p>
 <div align="center">
     <img src="figuras/error_rk4_h_01.png">
 </div>
@@ -431,7 +431,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <div align="center">
     <img src="figuras/error_rk4_h_001.png">
 </div>
-<p>Bem, aqui o erro est&#xE1; maior que os anteriores, por&#xE9;m ainda s&#xE3;o erros muito pequenos. Ent&#xE3;o, uma nova investiga&#xE7;&#xE3;o foi feito, esta feita diretamente nos dados gerados. Ao visualizar os dados, o problema com o erro foi percebido.</p>
+<p>Bem, aqui o erro est&#xE1; maior que os anteriores, por&#xE9;m ainda s&#xE3;o erros muito pequenos. Ent&#xE3;o, uma nova investiga&#xE7;&#xE3;o foi feita, visualizar os dados, fazendo isso, o problema foi identificado.</p>
 <p>Todo o c&#xF3;digo &#xE9; implementado utilizando <a href="https://www.gnu.org/software/octave/">Octave</a> e ao olhar os valores foi poss&#xED;vel perceber, estes pequenos erros est&#xE3;o relacionados a maneira como &#xE9; feita a representa&#xE7;&#xE3;o num&#xE9;rica na linguagem. Esses erros est&#xE3;o associados a valores presentes ap&#xF3;s 15 ou 16 casas decimais. A tabela abaixo apresenta um exemplo de valor real e aproximado que gerou um erro.</p>
 <table>
 <thead>
@@ -452,7 +452,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </tbody>
 </table>
 <p>Isso faz com que o erro relativo seja algo como <code>6.709863883355365e-16</code> que &#xE9; um dos erros apresentados nos gr&#xE1;ficos criados para an&#xE1;lise.</p>
-<p>Com isto &#xE9; poss&#xED;vel perceber que, mesmo trabalhando com computadores atuais, em linguagens especializadas para o c&#xE1;lculo num&#xE9;rico pode-se enfrentar problemas com a precis&#xE3;o dos valores num&#xE9;ricos.</p>
+<p>Com isto &#xE9; poss&#xED;vel perceber que, mesmo trabalhando com computadores atuais, em linguagens especializadas para computa&#xE7;&#xE3;o num&#xE9;rica pode-se enfrentar problemas com a precis&#xE3;o dos valores.</p>
 <p>Estes s&#xE3;o erros bem pequenos, n&#xE3;o apresentando mudan&#xE7;as gerais nos resultados, por&#xE9;m, &#xE9; interessante notar detalhes como este, j&#xE1; que, a depender do m&#xE9;todo que est&#xE1; sendo utilizado e seu objetivo de aplica&#xE7;&#xE3;o esses mudan&#xE7;as pequenas podem torna-se grandes o suficiente para causar problemas nos resultados.</p>
 
       </div>
