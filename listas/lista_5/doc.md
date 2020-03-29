@@ -144,3 +144,40 @@ Por fim, os métodos de Runge-Kutta de 4° Ordem, que com apenas um passo já co
 Mesmo com os ótimos comportamentos obtidos acima, é preciso dizer que, eles foram obtidos sem grandes problemas por conta do cenário favorável a que os testes foram realizados, relacionando este principalmente a função que estava sendo analisada e sua baixa complexidade. Como informado por Carlos Balsa em suas [notas de aula](http://www.ipb.pt/~balsa/teaching/MA08_09/PVI_EDOs.pdf), existem funções que ao serem aproximadas podem apresentar comportamentos 'não comportados', por conta do acúmulo de erro ao longo da aproximação dos pontos, fazendo com que, quando mais pontos aproximados, maior o erro obtido.
 
 > Para a construção desta solução, a página de [Tipos de Erros](https://www.ufrgs.br/reamat/CalculoNumerico/livro-py/rdneadm-tipos_de_erros.html) foi consultada, o material é simples e direto
+
+**Erros com a precisão dos valores**: Neste tópico apresento um comportamento que durante todas as foi citado pelo professor, os erros associados às formas de representação numérica de um computador.
+
+Considere o seguinte problema do valor inicial (P.V.I). $y' = x^2 + 1$ e $y(0) = 0$.
+
+Então, a mesma foi resolvida através do método analítico, que foi utilizado como verdade, assim como feito nos passos anteriores e então a função foi aproximada, desta vez utilizando o método de Runge-Kutta de 4° ordem. O primeiro teste de aproximação feito foi com o valor de $h = 1$. O resultado obtido é apresentado na Figura abaixo.
+
+<div align="center">
+    <img src="figuras/error_rk4_h_1.png">
+</div>
+
+Até este teste, todos os demais feitos com o método de Runge-Kutta apresentaram erro relativo igual a 0, para todos os pontos estimados, então, ao ver este resultado, mesmo o erro sendo muito pequeno, uma pequena investigação foi feita. Começando diminuíndo o valor de $h$, para verificar se este pequeno erro ia crescer ou diminuir.
+
+<div align="center">
+    <img src="figuras/error_rk4_h_01.png">
+</div>
+
+Certo, o erro apresentou certo aumento, então, o $h$ foi reduzido mais uma vez
+
+<div align="center">
+    <img src="figuras/error_rk4_h_001.png">
+</div>
+
+Bem, aqui o erro está maior que os anteriores, porém ainda são erros muito pequenos. Então, uma nova investigação foi feito, esta feita diretamente nos dados gerados. Ao visualizar os dados, o problema com o erro foi percebido.
+
+Todo o código é implementado utilizando [Octave](https://www.gnu.org/software/octave/) e ao olhar os valores foi possível perceber, estes pequenos erros estão relacionados a maneira como é feita a representação numérica na linguagem. Esses erros estão associados a valores presentes após 15 ou 16 casas decimais. A tabela abaixo apresenta um exemplo de valor real e aproximado que gerou um erro.
+
+|         Método         |    Valor gerado    |
+|:----------------------:|:------------------:|
+|        Analítico       | 0.3309226666666667 |
+| Runge-Kutta (4° Ordem) | 0.3309226666666665 |
+
+Isso faz com que o erro relativo seja algo como `6.709863883355365e-16` que é um dos erros apresentados nos gráficos criados para análise.
+
+Com isto é possível perceber que, mesmo trabalhando com computadores atuais, em linguagens especializadas para o cálculo numérico pode-se enfrentar problemas com a precisão dos valores numéricos.
+
+Estes são erros bem pequenos, não apresentando mudanças gerais nos resultados, porém, é interessante notar detalhes como este, já que, a depender do método que está sendo utilizado e seu objetivo de aplicação esses mudanças pequenas podem torna-se grandes o suficiente para causar problemas nos resultados.

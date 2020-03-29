@@ -417,6 +417,43 @@ pre[data-line] .line-highlight[data-end]:after {
 <blockquote>
 <p>Para a constru&#xE7;&#xE3;o desta solu&#xE7;&#xE3;o, a p&#xE1;gina de <a href="https://www.ufrgs.br/reamat/CalculoNumerico/livro-py/rdneadm-tipos_de_erros.html">Tipos de Erros</a> foi consultada, o material &#xE9; simples e direto</p>
 </blockquote>
+<p><strong>Erros com a precis&#xE3;o dos valores</strong>: Neste t&#xF3;pico apresento um comportamento que durante todas as foi citado pelo professor, os erros associados &#xE0;s formas de representa&#xE7;&#xE3;o num&#xE9;rica de um computador.</p>
+<p>Considere o seguinte problema do valor inicial (P.V.I). <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mo mathvariant="normal" lspace="0em" rspace="0em">&#x2032;</mo></msup><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y&apos; = x^2 + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.946332em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> e <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y(0) = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.</p>
+<p>Ent&#xE3;o, a mesma foi resolvida atrav&#xE9;s do m&#xE9;todo anal&#xED;tico, que foi utilizado como verdade, assim como feito nos passos anteriores e ent&#xE3;o a fun&#xE7;&#xE3;o foi aproximada, desta vez utilizando o m&#xE9;todo de Runge-Kutta de 4&#xB0; ordem. O primeiro teste de aproxima&#xE7;&#xE3;o feito foi com o valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>. O resultado obtido &#xE9; apresentado na Figura abaixo.</p>
+<div align="center">
+    <img src="figuras/error_rk4_h_1.png">
+</div>
+<p>At&#xE9; este teste, todos os demais feitos com o m&#xE9;todo de Runge-Kutta apresentaram erro relativo igual a 0, para todos os pontos estimados, ent&#xE3;o, ao ver este resultado, mesmo o erro sendo muito pequeno, uma pequena investiga&#xE7;&#xE3;o foi feita. Come&#xE7;ando diminu&#xED;ndo o valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>, para verificar se este pequeno erro ia crescer ou diminuir.</p>
+<div align="center">
+    <img src="figuras/error_rk4_h_01.png">
+</div>
+<p>Certo, o erro apresentou certo aumento, ent&#xE3;o, o <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span> foi reduzido mais uma vez</p>
+<div align="center">
+    <img src="figuras/error_rk4_h_001.png">
+</div>
+<p>Bem, aqui o erro est&#xE1; maior que os anteriores, por&#xE9;m ainda s&#xE3;o erros muito pequenos. Ent&#xE3;o, uma nova investiga&#xE7;&#xE3;o foi feito, esta feita diretamente nos dados gerados. Ao visualizar os dados, o problema com o erro foi percebido.</p>
+<p>Todo o c&#xF3;digo &#xE9; implementado utilizando <a href="https://www.gnu.org/software/octave/">Octave</a> e ao olhar os valores foi poss&#xED;vel perceber, estes pequenos erros est&#xE3;o relacionados a maneira como &#xE9; feita a representa&#xE7;&#xE3;o num&#xE9;rica na linguagem. Esses erros est&#xE3;o associados a valores presentes ap&#xF3;s 15 ou 16 casas decimais. A tabela abaixo apresenta um exemplo de valor real e aproximado que gerou um erro.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">M&#xE9;todo</th>
+<th style="text-align:center">Valor gerado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Anal&#xED;tico</td>
+<td style="text-align:center">0.3309226666666667</td>
+</tr>
+<tr>
+<td style="text-align:center">Runge-Kutta (4&#xB0; Ordem)</td>
+<td style="text-align:center">0.3309226666666665</td>
+</tr>
+</tbody>
+</table>
+<p>Isso faz com que o erro relativo seja algo como <code>6.709863883355365e-16</code> que &#xE9; um dos erros apresentados nos gr&#xE1;ficos criados para an&#xE1;lise.</p>
+<p>Com isto &#xE9; poss&#xED;vel perceber que, mesmo trabalhando com computadores atuais, em linguagens especializadas para o c&#xE1;lculo num&#xE9;rico pode-se enfrentar problemas com a precis&#xE3;o dos valores num&#xE9;ricos.</p>
+<p>Estes s&#xE3;o erros bem pequenos, n&#xE3;o apresentando mudan&#xE7;as gerais nos resultados, por&#xE9;m, &#xE9; interessante notar detalhes como este, j&#xE1; que, a depender do m&#xE9;todo que est&#xE1; sendo utilizado e seu objetivo de aplica&#xE7;&#xE3;o esses mudan&#xE7;as pequenas podem torna-se grandes o suficiente para causar problemas nos resultados.</p>
 
       </div>
       
