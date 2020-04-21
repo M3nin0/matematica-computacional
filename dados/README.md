@@ -6,4 +6,4 @@ Dados utilizados para a realização das atividades do curso de Análise estatí
 
 Os dados presentes no repositório são referentes aos registros de vacinação e casos diários do COVID-19.
 
-Os dados foram retirados do [Our World in Data](https://ourworldindata.org/coronavirus)
+- Fonte: [Our World in Data](https://ourworldindata.org/coronavirus)
